@@ -1,0 +1,17 @@
+.bannerContainer{
+    justify-content: center;
+}
+
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titleText{
+    font-size: 0.9rem !important;
+}
+
+.titleIcon{
+    padding-left: 0.5rem;
+}

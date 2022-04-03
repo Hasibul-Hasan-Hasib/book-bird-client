@@ -1,0 +1,73 @@
+.searchBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.logo {
+  width: 100%;
+}
+
+.searchAreaContainer {
+  height: 95%;
+  margin: 0 2% !important;
+  display: flex;
+  align-items: center;
+  justify-content: center !important;
+  border: 1px solid gray;
+  border-right: none;
+  border-radius: 7px;
+}
+
+.categorySearchBtn{
+  border-right: 1px solid gray;
+}
+
+.searchField {
+  height: 100%;
+  width: 100%;
+  border: none;
+  padding: 0 1rem;
+}
+
+.searchField:focus {
+  outline: none;
+}
+
+.searchBtnContainer {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+
+.searchBtn {
+  text-align: center;
+  border: none;
+  background-color: #357a38 !important;
+  height: 100%;
+  width: 100%;
+}
+
+.searchBtn:hover {
+  background-color: #357a38 !important;
+}
+
+.cartContainer {
+  display: flex;
+  flex-direction: column !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.cartBtn {
+  color: rgb(75, 75, 75);
+  background: none;
+  border: none;
+}
+
+.cartText {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
