@@ -1,11 +1,13 @@
 .bannerContainer{
     justify-content: center;
+    margin: 1rem 0;
 }
 
 .title{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 1rem;
 }
 
 .titleText{
@@ -14,4 +16,14 @@
 
 .titleIcon{
     padding-left: 0.5rem;
+}
+
+.bannerImageContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.bannerImg{
+    width: 90%;
+    border-radius: 20px;
 }

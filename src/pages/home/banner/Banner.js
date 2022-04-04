@@ -18,8 +18,8 @@ const Banner = () => {
                             <Typography className={styles.titleText}>Free Shipping on all orders in the UK</Typography>
                             <LocalShippingIcon className={styles.titleIcon}/>
                         </div>
-                        <div>
-                            <img src={bannerImage1} alt="" />
+                        <div className={styles.bannerImageContainer}>
+                            <img src={bannerImage1} className={styles.bannerImg} alt="" />
                         </div>
                     </Grid>
                     <Grid item xs={4}>
@@ -27,8 +27,8 @@ const Banner = () => {
                             <Typography className={styles.titleText}>Over 7 millions books in stock</Typography>
                             <MenuBookIcon className={styles.titleIcon}/>
                         </div>
-                        <div>
-                            <img src={bannerImage2} alt="" />
+                        <div className={styles.bannerImageContainer}>
+                            <img src={bannerImage2} className={styles.bannerImg} alt="" />
                         </div>
                     </Grid>
                     <Grid item xs={4}>
@@ -36,8 +36,8 @@ const Banner = () => {
                             <Typography className={styles.titleText}>Proud to be B-Corp</Typography>
                             <CheckIcon className={styles.titleIcon}/>
                         </div>
-                        <div>
-                            <img src={bannerImage3} alt="" />
+                        <div className={styles.bannerImageContainer}>
+                            <img src={bannerImage3} className={styles.bannerImg} alt="" />
                         </div>
                     </Grid>
                 </Grid>

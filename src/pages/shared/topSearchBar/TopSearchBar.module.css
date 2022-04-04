@@ -44,14 +44,10 @@
 .searchBtn {
   text-align: center;
   border: none;
-  background-color: #357a38 !important;
   height: 100%;
   width: 100%;
 }
 
-.searchBtn:hover {
-  background-color: #357a38 !important;
-}
 
 .cartContainer {
   display: flex;
