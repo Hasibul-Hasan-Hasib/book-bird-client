@@ -1,0 +1,22 @@
+.card{
+    margin: 1rem 0 !important ;
+}
+
+.imgContainer{
+    text-align: center;
+}
+
+.textContainer{
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.cardImg{
+    width:  10rem;
+    height: 250px;
+    border-radius: 10px;
+}
+
+.addCartBtnContainer{
+    text-align: center !important;
+}

@@ -3,7 +3,6 @@ import NavigationBar from '../../shared/navigationBar/NavigationBar';
 import TopSearchBar from '../../shared/topSearchBar/TopSearchBar';
 import CategoryBar from '../../shared/categoryBar/CategoryBar';
 import BestSelling from '../BestSellingFiction/BestSellingFiction';
-import Card from '../../shared/Card/Card'
 import Banner from '../banner/Banner';
 
 
@@ -15,7 +14,6 @@ const Home = () => {
             <CategoryBar />
             <Banner />
             <BestSelling />
-            <Card />
         </>
     );
 };

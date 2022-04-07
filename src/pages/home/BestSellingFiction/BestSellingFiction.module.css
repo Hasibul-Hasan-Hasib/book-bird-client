@@ -1,0 +1,25 @@
+
+.link{
+    text-decoration: none;
+}
+
+.titleContainer{
+    display: flex;
+    color: black;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+.viewMoreBtn{
+    display: flex;
+    align-items: center;
+}
+
+.titleContainer:hover{
+    color: #2196f3;
+}
+
+.title{
+    font-size: 1.7rem;
+    font-weight: 600;
+}
