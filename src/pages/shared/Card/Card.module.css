@@ -1,3 +1,8 @@
+:root{
+    --primary-color: #2196f3;
+}
+
+
 .card{
     margin: 1rem 0 !important ;
 }
@@ -8,13 +13,50 @@
 
 .textContainer{
     text-align: center;
-    padding: 0.5rem;
+    padding: 0.7rem;
 }
 
 .cardImg{
     width:  10rem;
     height: 250px;
     border-radius: 10px;
+}
+
+
+.link:hover{
+    color: var(--primary-color) !important;
+    cursor: pointer;
+}
+
+.title{
+    margin: 0;
+    font-size: 1rem;
+    line-clamp: 2;
+    height: 3rem;
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.author{
+    margin: 0;
+    margin-bottom: 0.5rem;
+    color: gray;
+    font-size: 0.7rem;
+}
+
+
+.condition{
+    margin: 0;
+    margin-bottom: 0.5rem;
+    font-size: 0.7rem;
+}
+
+.price{
+    margin: 0;
+    margin-bottom: 0.5rem;
+    color: rgb(0, 150, 150);
 }
 
 .addCartBtnContainer{

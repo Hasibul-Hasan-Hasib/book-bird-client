@@ -1,5 +1,6 @@
 {
   "name": "book-bird-client",
+  "homepage": "https://bookbirds.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

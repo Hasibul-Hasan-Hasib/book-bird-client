@@ -19,11 +19,12 @@ const BestSellingFiction = () => {
                         <Grid item className={styles.viewMoreBtn}>View More Fiction Books <ArrowForwardIosIcon /></Grid>
                     </Grid>
                 </NavLink>
-                <Grid container>
+                <Grid container className={styles.cardContainer}>
                     {
-                        books.map(book => <Card book={book} />)
+                        books.slice(0,6).map(book => <Card book={book} />)
                     }
                 </Grid>
+                <hr/>
             </Container>
         </>
     );

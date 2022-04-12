@@ -1,0 +1,12 @@
+
+.heroImg{
+    width: 100%;
+}
+
+.textContainer{
+    display: flex;
+    flex-direction: column !important;
+    text-align: left;
+    justify-content: center;
+}
+

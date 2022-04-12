@@ -1,0 +1,47 @@
+.title{
+    margin: 0;
+    padding: 0 1rem;
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.link{
+    text-decoration: none;
+    color: black;
+}
+
+.allCategoryContainer{
+    height: 15rem !important;
+    overflow: hidden !important;
+    margin-bottom: 1rem;
+}
+
+.categorySectionContainer{
+    margin-top: 1rem !important;
+    display: flex;
+    flex-direction: column !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgContainer{
+    width: 100px;
+    height: 100px;
+    padding: 2rem;
+    background-color: aliceblue;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.imgContainer:hover{
+    background-color: rgb(204, 219, 234);
+}
+
+.categoryName:hover{
+    color: #2196f3;;
+}
+
+.categoryImg{
+    width: 70%;
+    height: 100%;
+}
