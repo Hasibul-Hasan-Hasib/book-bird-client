@@ -1,6 +1,11 @@
+.heroContainer{
+    padding: 1rem;    
+}
+
 
 .heroImg{
-    width: 100%;
+    width: 90%;
+    border-radius: 15px;
 }
 
 .textContainer{
@@ -8,5 +13,17 @@
     flex-direction: column !important;
     text-align: left;
     justify-content: center;
+}
+
+.texts{
+    margin: 0;
+    color: gray;
+    margin-bottom: 1rem;
+}
+
+.title{
+    font-size: 1.8rem;
+    margin: 0;
+    margin-bottom: 1rem;
 }
 

@@ -2,15 +2,19 @@ import React from 'react';
 import NavigationBar from '../../shared/navigationBar/NavigationBar';
 import TopSearchBar from '../../shared/topSearchBar/TopSearchBar';
 import CategoryBar from '../../shared/categoryBar/CategoryBar';
-import BestSelling from '../BestSellingFiction/BestSellingFiction';
+import BestSelling from '../BestSelling/BestSelling';
 import Banner from '../Banner/Banner';
 import HomeBrowse from '../HomeBrowse/HomeBrowse';
 import HomeHero from '../HomeHero/HomeHero';
+import useData from '../../../hooks/useData';
+import Blogs from '../Blogs/Blogs';
 
 
 const Home = () => {
 
-    const browseFictionTitle = "Browse Fiction Books";
+    const books = useData();
+
+    
     const fictionData = [
         {
             "categoryName": "Fantasy",
@@ -38,6 +42,10 @@ const Home = () => {
         },
     ];
 
+    const fiction = "Fiction"
+    const nonFiction = "Non-Fiction"
+    const bookBird = "Book-Bird"
+    const children = "Children's"
 
     return (
         <>
@@ -45,9 +53,15 @@ const Home = () => {
             <TopSearchBar />
             <CategoryBar />
             <Banner />
-            <BestSelling />
-            <HomeBrowse title={browseFictionTitle} data={fictionData}/>
+            <BestSelling title={fiction} books={books}/>
+            <HomeBrowse title={fiction} data={fictionData}/>
             <HomeHero />
+            <HomeBrowse title={bookBird} data={fictionData}/>
+            <BestSelling title={nonFiction} books={books}/>
+            <HomeBrowse title={nonFiction} data={fictionData}/>
+            <BestSelling title={children} books={books}/>
+            <HomeBrowse title={children} data={fictionData}/>
+            <Blogs/>
         </>
     );
 };

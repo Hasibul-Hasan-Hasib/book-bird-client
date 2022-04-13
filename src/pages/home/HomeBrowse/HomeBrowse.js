@@ -13,7 +13,7 @@ const HomeBrowse = (props) => {
     return (
         <>
             <Container>
-                <h6 className={styles.title}>{title}</h6>
+                <h6 className={styles.title}>Browse {title}</h6>
                 <NavLink to='/about' className={styles.link}>
                     <Grid container className={styles.allCategoryContainer}>
                         {
