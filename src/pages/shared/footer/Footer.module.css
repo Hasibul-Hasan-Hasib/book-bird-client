@@ -1,0 +1,16 @@
+.copyRight{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.link{
+    text-decoration: none;
+    margin-left: 1rem;
+    font-weight: 700;
+    color: darkcyan;
+}
+
+.link:hover{
+    color: #2196f3;
+}

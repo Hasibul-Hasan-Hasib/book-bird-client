@@ -1,20 +1,22 @@
 import React from 'react';
-import NavigationBar from '../../shared/navigationBar/NavigationBar';
-import TopSearchBar from '../../shared/topSearchBar/TopSearchBar';
-import CategoryBar from '../../shared/categoryBar/CategoryBar';
+import NavigationBar from '../../shared/NavigationBar/NavigationBar';
+import TopSearchBar from '../../shared/TopSearchBar/TopSearchBar';
+import CategoryBar from '../../shared/CategoryBar/CategoryBar';
 import BestSelling from '../BestSelling/BestSelling';
 import Banner from '../Banner/Banner';
 import HomeBrowse from '../HomeBrowse/HomeBrowse';
 import HomeHero from '../HomeHero/HomeHero';
 import useData from '../../../hooks/useData';
 import Blogs from '../Blogs/Blogs';
+import Footer from '../../shared/Footer/Footer'
+import Testimonial from '../Testimonial/Testimonial';
 
 
 const Home = () => {
 
     const books = useData();
 
-    
+
     const fictionData = [
         {
             "categoryName": "Fantasy",
@@ -49,19 +51,26 @@ const Home = () => {
 
     return (
         <>
-            <NavigationBar />
-            <TopSearchBar />
-            <CategoryBar />
-            <Banner />
-            <BestSelling title={fiction} books={books}/>
-            <HomeBrowse title={fiction} data={fictionData}/>
-            <HomeHero />
-            <HomeBrowse title={bookBird} data={fictionData}/>
-            <BestSelling title={nonFiction} books={books}/>
-            <HomeBrowse title={nonFiction} data={fictionData}/>
-            <BestSelling title={children} books={books}/>
-            <HomeBrowse title={children} data={fictionData}/>
-            <Blogs/>
+            <head>
+                <title>This is home</title>
+            </head>
+            <body>
+                <NavigationBar />
+                <TopSearchBar />
+                {/* <CategoryBar /> */}
+                <Banner />
+                <BestSelling title={fiction} books={books} />
+                <HomeBrowse title={fiction} data={fictionData} />
+                <HomeHero />
+                <HomeBrowse title={bookBird} data={fictionData} />
+                <BestSelling title={nonFiction} books={books} />
+                <HomeBrowse title={nonFiction} data={fictionData} />
+                <Blogs />
+                <BestSelling title={children} books={books} />
+                <HomeBrowse title={children} data={fictionData} />
+                <Testimonial />
+                <Footer />
+            </body>
         </>
     );
 };

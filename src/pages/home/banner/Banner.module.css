@@ -1,4 +1,5 @@
-.bannerContainer{
+
+.banner1{
     justify-content: center;
     margin: 1rem 0;
 }
@@ -26,4 +27,40 @@
 .bannerImg{
     width: 90%;
     border-radius: 20px;
+}
+
+
+
+.banner2{
+    display: none;
+    position: relative;
+}
+
+.slideBtns{
+    display: flex;
+    top: 0;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+
+.backBtn,.nextBtn{
+    border-radius: 50%;
+    padding: 0.9rem 1rem;
+    border: none;
+}
+
+
+@media only screen and (max-width: 600px){
+	.banner1{
+        display: none !important;
+    }
+    .banner2{
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 899px){
+	.hidden{
+        display: none;
+    }
 }
