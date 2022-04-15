@@ -11,8 +11,8 @@ const LinkSection = () => {
             <div className={styles.background}>
                 <Container className={styles.firstSectionContainer}>
                     <img className={styles.logo} src={Logo} alt="" />
-                    <h4>BookBird sells used books online to over 190 countries worldwide.</h4>
-                    <h4>You can connect with us on Facebook, Twitter, Instagram, or through our Blog.</h4>
+                    <h4 className={styles.text}>BookBird sells used books online to over 190 countries worldwide.</h4>
+                    <h4 className={styles.text}>You can connect with us on Facebook, Twitter, Instagram, or through our Blog.</h4>
                 </Container>
                 <hr />
                 <Container>

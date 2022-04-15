@@ -1,7 +1,5 @@
 import React from 'react';
 import NavigationBar from '../../shared/NavigationBar/NavigationBar';
-import TopSearchBar from '../../shared/TopSearchBar/TopSearchBar';
-import CategoryBar from '../../shared/CategoryBar/CategoryBar';
 import BestSelling from '../BestSelling/BestSelling';
 import Banner from '../Banner/Banner';
 import HomeBrowse from '../HomeBrowse/HomeBrowse';
@@ -10,6 +8,7 @@ import useData from '../../../hooks/useData';
 import Blogs from '../Blogs/Blogs';
 import Footer from '../../shared/Footer/Footer'
 import Testimonial from '../Testimonial/Testimonial';
+import TopSearch from '../../shared/TopSearch/TopSearch';
 
 
 const Home = () => {
@@ -55,9 +54,8 @@ const Home = () => {
                 <title>This is home</title>
             </head>
             <body>
-                <NavigationBar />
-                <TopSearchBar />
-                {/* <CategoryBar /> */}
+                <NavigationBar/>
+                <TopSearch />
                 <Banner />
                 <BestSelling title={fiction} books={books} />
                 <HomeBrowse title={fiction} data={fictionData} />

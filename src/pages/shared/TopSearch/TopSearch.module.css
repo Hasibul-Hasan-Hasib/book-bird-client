@@ -1,0 +1,13 @@
+.searchBar2{
+    display: none;
+}
+
+
+@media only screen and (max-width: 899px){
+	.searchBar1{
+        display: none;
+    }
+    .searchBar2{
+        display: block;
+    }
+}

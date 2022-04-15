@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './TopSearchBar.module.css';
 import { Button, Container, Grid, Menu, MenuItem } from '@mui/material';
-import logo1 from '../../../assets/image/logo/logo1.png';
+import logo1 from '../../../../assets/image/logo/logo1.png';
 import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 

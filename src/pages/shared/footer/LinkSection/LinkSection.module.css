@@ -12,7 +12,12 @@
 }
 
 .logo{
-    width: 15rem;
+    width: 25%;
+}
+
+.text{
+    margin: 0 0 1rem 0;
+    color: gray;
 }
 
 .secondSectionContainer{
@@ -26,6 +31,7 @@
     flex-direction: column !important;
     align-items: center;
     text-align: center;
+    margin-bottom: 1rem !important;
 }
 
 .footerLogo1{
@@ -46,4 +52,14 @@
     text-decoration: none;
     color: rgb(141, 141, 141);
     margin: 0.1rem 0;
+}
+
+
+@media only screen and (max-width: 899px){
+	.footerLogo1{
+        display: none;
+    }
+    .footerLogo2{
+        width: 60%;
+    }
 }
