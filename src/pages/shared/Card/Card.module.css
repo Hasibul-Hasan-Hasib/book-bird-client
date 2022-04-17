@@ -62,3 +62,8 @@
 .addCartBtnContainer{
     text-align: center !important;
 }
+
+.addCartBtn{
+    box-shadow: none !important;
+}
+

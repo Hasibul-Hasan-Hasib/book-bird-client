@@ -1,6 +1,6 @@
 
 
-.blogContainer {
+.blogContainer,.hidden {
   padding: 1rem ;
   text-align: center;
 }
@@ -29,4 +29,18 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: normal;
+}
+
+
+
+@media only screen and (max-width: 992px){
+	.hidden{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px){
+	.hidden{
+        display: block;
+    }
 }

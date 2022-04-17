@@ -23,6 +23,7 @@
 .secondSectionContainer{
     padding: 1rem 0;
     display: flex;
+    justify-content: center;
 }
 
 
@@ -54,12 +55,16 @@
     margin: 0.1rem 0;
 }
 
+.link:hover{
+    color: #2196f3;
+}
 
-@media only screen and (max-width: 899px){
+
+@media only screen and (max-width: 992px){
 	.footerLogo1{
         display: none;
     }
     .footerLogo2{
-        width: 60%;
+        width: 50%;
     }
 }

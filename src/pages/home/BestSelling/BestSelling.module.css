@@ -15,8 +15,11 @@
 }
 
 .viewMoreBtn{
+    margin: 0;
+    font-weight: 500;
     display: flex;
     align-items: center;
+    justify-content: right;
 }
 
 .titleContainer:hover{
@@ -26,6 +29,7 @@
 .title{
     font-size: 1.7rem;
     font-weight: 600;
+    margin: 0;
 }
 
 

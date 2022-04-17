@@ -1,52 +1,75 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './TopSearchBar.module.css';
-import { Button, Container, Grid, Menu, MenuItem } from '@mui/material';
+import { Button, Container, Grid, Group, Drawer, Select, TextInput } from '@mantine/core';
+import { Link } from 'react-router-dom'
 import logo1 from '../../../../assets/image/logo/logo1.png';
-import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { ShoppingCart } from 'tabler-icons-react';
+import SideCart from '../SideCart/SideCart';
 
 const TopSearchBar = () => {
 
+    // Cart States
+
+    const [opened, setOpened] = useState(false);
+
+
+
     return (
         <>
-            <Container>
-                <Grid container className={styles.searchBar}>
-                    <Grid item xs={1} >
-                        <img src={logo1} alt="logo" className={styles.logo} />
-                    </Grid>
-                    <Grid container item xs={9.5} className={styles.searchAreaContainer}>
-                        <Grid item xs={1.5} className={styles.categorySearchBtn}>
-                            <PopupState variant="popover" popupId="demo-popup-menu">
-                                {(popupState) => (
-                                    <React.Fragment>
-                                        <Button {...bindTrigger(popupState)}>
-                                            All
-                                        </Button>
-                                        <Menu {...bindMenu(popupState)}>
-                                            <MenuItem onClick={popupState.close}>Books</MenuItem>
-                                            <MenuItem onClick={popupState.close}>DVD</MenuItem>
-                                            <MenuItem onClick={popupState.close}>Audio</MenuItem>
-                                            <MenuItem onClick={popupState.close}>
-                                                Video
-                                            </MenuItem>
-                                        </Menu>
-                                    </React.Fragment>
-                                )}
-                            </PopupState>
-                        </Grid>
-                        <Grid item xs={8.5}>
-                            <input className={styles.searchField} type="text" placeholder='Search title or author on millions of products' />
-                        </Grid>
-                        <Grid item xs={2} className={styles.searchBtnContainer}>
-                            <Button variant='contained' className={styles.searchBtn}>Search</Button>
-                        </Grid>
-                    </Grid>
-                    <Grid item xs={1} className={styles.cartContainer}>
-                        <button className={styles.cartBtn}>
-                            <ShoppingCartIcon sx={{ fontSize: '1.7rem' }} />
-                            <h6 className={styles.cartText}>Cart</h6>
-                        </button>
-                    </Grid>
+            <Container size="lg">
+                <Grid columns={24} className={styles.searchBar}>
+                    <Grid.Col span={3} >
+                        <Link to='/home'><img src={logo1} alt="logo" className={styles.logo} /></Link>
+                    </Grid.Col>
+
+                    {/* Search Fie */}
+
+                    <Grid.Col span={20} className={styles.searchAreaContainer}>
+                        <Grid.Col span={4} >
+                            <Select
+                                data={[
+                                    { value: 'All', label: 'All' },
+                                    { value: 'Books', label: 'Books' },
+                                    { value: 'Rare Books', label: 'Rare Books' },
+                                    { value: 'DVD & Blue-Ray', label: 'DVD & Blue-Ray' },
+                                    { value: 'Music', label: 'Music' },
+                                    { value: 'Videos', label: 'Videos' },
+                                ]}
+                            />
+                        </Grid.Col>
+                        <Grid.Col span={17}>
+                            <TextInput
+                                placeholder="Search the book you need"
+                            />
+                        </Grid.Col>
+                        <Grid.Col span={4} className={styles.searchBtnContainer}>
+                            <Button>Search</Button>
+                        </Grid.Col>
+                    </Grid.Col>
+
+                    {/* Cart Btn */}
+
+                    <Grid.Col span={1} className={styles.cartContainer}>
+                        <Drawer
+                            opened={opened}
+                            onClose={() => setOpened(false)}
+                            padding="xl"
+                            size="xxl"
+                            position="right"
+                        >
+                            <SideCart />
+                        </Drawer>
+                        <Group position="right">
+                            <button
+                                className={styles.cartBtn}
+                                onClick={() => setOpened(true)}
+                            >
+                                <ShoppingCart size={28} />
+                                <h6 className={styles.cartText}>Cart</h6>
+                            </button>
+                        </Group>
+                    </Grid.Col>
+                    
                 </Grid>
             </Container>
             <hr />

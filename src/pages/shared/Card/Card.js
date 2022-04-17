@@ -1,4 +1,4 @@
-import { Grid, Button } from '@mui/material';
+import { Grid, Button } from '@mantine/core';
 import styles from './Card.module.css'
 import React from 'react';
 
@@ -6,7 +6,7 @@ import React from 'react';
 const Card = (props) => {
     const { Title, Author, Condition, Image, Price } = props.book
     return (
-        <Grid item xs={6} sm={4} md={3} lg={2} className={styles.card}>
+        <Grid.Col xs={6} sm={4} md={3} lg={2} className={styles.card}>
             <div className={styles.imgContainer}>
                 <img src={Image} className={styles.cardImg} alt="" />
             </div>
@@ -19,9 +19,9 @@ const Card = (props) => {
                 <h2 className={styles.price}>£ {Price.slice(1)}</h2>
             </div>
             <div className={styles.addCartBtnContainer}>
-                <Button variant='contained'>Add to Cart</Button>
+                <Button className={styles.addCartBtn}>Add to Cart</Button>
             </div>
-        </Grid>
+        </Grid.Col>
     );
 };
 

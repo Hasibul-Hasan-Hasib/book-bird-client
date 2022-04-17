@@ -6,47 +6,21 @@
 }
 
 .logo {
-  width: 100%;
+  width: 80%;
 }
 
 .searchAreaContainer {
-  height: 95%;
-  margin: 0 2% !important;
   display: flex;
   align-items: center;
-  justify-content: center !important;
-  border: 1px solid gray;
-  border-right: none;
-  border-radius: 7px;
+  text-align: right;
 }
 
-.categorySearchBtn{
-  border-right: 1px solid gray;
-}
 
-.searchField {
-  height: 100%;
-  width: 100%;
-  border: none;
-  padding: 0 1rem;
-}
-
-.searchField:focus {
-  outline: none;
-}
 
 .searchBtnContainer {
-  text-align: center;
-  height: 100%;
-  width: 100%;
+  text-align: left ;
 }
 
-.searchBtn {
-  text-align: center;
-  border: none;
-  height: 100%;
-  width: 100%;
-}
 
 
 .cartContainer {
@@ -60,6 +34,10 @@
   color: rgb(75, 75, 75);
   background: none;
   border: none;
+}
+
+.cartBtn:hover{
+  color: #2196f3;
 }
 
 .cartText {

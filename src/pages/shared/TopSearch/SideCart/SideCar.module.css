@@ -1,0 +1,36 @@
+.orderContainer{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+}
+
+.title{
+    margin: 0;
+    color: rgb(0, 87, 87);
+    margin: 0.5rem 0;
+}
+
+
+.info{
+    margin: 0;
+    color: rgb(2, 169, 169);
+    margin: 0.5rem 0;
+}
+
+
+.infoContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bookImg{
+    width: 90%;
+    border-radius: 15px;
+}
+
+
+.btn{
+    width: 100%;
+    margin-top: 1rem;
+}

@@ -29,12 +29,7 @@
     margin: 0;
 }
 
-.textField:focus{
-    outline: none;
-}
-
 
 .btn{
     width: 100%;
-    height: 100%;
 }

@@ -1,4 +1,4 @@
-import { Container } from '@mui/material';
+import { Container } from '@mantine/core';
 import styles from './Footer.module.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
