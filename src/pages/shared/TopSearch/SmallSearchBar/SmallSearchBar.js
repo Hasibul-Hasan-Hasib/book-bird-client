@@ -1,14 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './SmallSearchBar.module.css'
-import { Grid } from '@mantine/core';
-import { Menu2, Search, ShoppingCart, Login } from 'tabler-icons-react';
+import { Burger, Grid, Menu } from '@mantine/core';
+import { Search, ShoppingCart, Login } from 'tabler-icons-react';
 import logo from '../../../../assets/image/logo/logo1.png'
 
 const SmallSearchBar = () => {
+
+    const [opened, setOpened] = useState(false);
+    const title = opened ? 'Close navigation' : 'Open navigation';
+
+
     return (
         <>
             <Grid columns={12} container className={styles.searchBarContainer}>
-                <Grid.Col span={2} ><Menu2 size={28} /></Grid.Col>
+                <Grid.Col span={2} >
+                    <Menu
+                        control={
+                            <Burger
+                                opened={opened}
+                                onClick={() => setOpened((o) => !o)}
+                                title={title}
+                            />
+                        }
+                    >
+                        <Menu.Label >Application</Menu.Label>
+                        <Menu.Item onClick={() => setOpened((o) => !o)}>Settings</Menu.Item>
+                        <Menu.Item onClick={() => setOpened((o) => !o)}>Messages</Menu.Item>
+                        <Menu.Item onClick={() => setOpened((o) => !o)}>Gallery</Menu.Item>
+                    </Menu>
+
+                </Grid.Col>
                 <Grid.Col span={2} ><Search size={28} /></Grid.Col>
                 <Grid.Col span={4}>
                     <img className={styles.logo} src={logo} alt="" />

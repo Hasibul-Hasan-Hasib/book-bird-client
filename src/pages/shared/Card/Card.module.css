@@ -22,6 +22,11 @@
     border-radius: 10px;
 }
 
+.link{
+    text-decoration: none;
+    color: black;
+}
+
 
 .link:hover{
     color: var(--primary-color) !important;

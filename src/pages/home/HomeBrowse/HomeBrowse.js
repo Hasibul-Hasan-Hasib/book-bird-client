@@ -18,7 +18,7 @@ const HomeBrowse = (props) => {
                     <Grid className={styles.allCategoryContainer}>
                         {
                             data.map(data =>
-                                <Grid.Col xs={6} sm={4} md={3} lg={2} item className={styles.categorySectionContainer}>
+                                <Grid.Col span={6} xs={4} sm={3} md={3} lg={2} item className={styles.categorySectionContainer}>
                                     <div className={styles.imgContainer}>
                                         <img className={styles.categoryImg} src={data.bookImg} alt="" />
                                     </div>

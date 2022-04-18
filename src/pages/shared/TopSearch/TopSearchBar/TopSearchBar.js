@@ -27,6 +27,8 @@ const TopSearchBar = () => {
                     <Grid.Col span={20} className={styles.searchAreaContainer}>
                         <Grid.Col span={4} >
                             <Select
+                                defaultValue="All"
+                                defaultLabel="All"
                                 data={[
                                     { value: 'All', label: 'All' },
                                     { value: 'Books', label: 'Books' },

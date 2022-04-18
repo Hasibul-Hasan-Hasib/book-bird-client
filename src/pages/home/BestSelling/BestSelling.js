@@ -22,7 +22,7 @@ const BestSellingFiction = (props) => {
                         <h3 className={styles.viewMoreBtn}>View More Fiction Books <ArrowRight /></h3>
                     </Grid>
                 </NavLink>
-                <Grid container className={styles.cardContainer}>
+                <Grid className={styles.cardContainer}>
                     {
                         books.slice(0, 6).map(book => <Card book={book} />)
                     }

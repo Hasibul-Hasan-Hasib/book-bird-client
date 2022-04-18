@@ -1,0 +1,62 @@
+.detailsContainer{
+    margin: 2rem 0;
+}
+
+
+.imgContainer{
+    text-align: center;
+}
+
+
+.bookImg{
+    width: 90%;
+    border-radius: 10px;
+}
+
+
+.infoContianer{
+    text-align: center;
+}
+
+.title{
+    margin: 0;
+    margin-bottom: 1rem ;
+}
+
+.colorTitle{
+    margin: 0;
+    color: darkcyan;
+    margin-bottom: 1rem;
+}
+
+.price{
+    color: gray;
+}
+
+.btnContainer{
+    display: flex;
+    align-items: center;
+}
+
+.addCartBtn{
+    width: 80%;
+    margin-right: 2rem;
+}
+
+.iconBtnContainer{
+    border: 2px solid gray;
+    align-items: center;
+    justify-content: center;
+    padding: 0.2rem 0.3rem 0.1rem;
+    border-radius:  50%;
+}
+
+.iconBtnContainer:hover{
+    color: lightcoral;
+    border: 2px solid lightcoral;
+}
+
+.iconBtn:hover{
+    transform: scale(1.2);
+    transition: 0.2s ease;
+}
