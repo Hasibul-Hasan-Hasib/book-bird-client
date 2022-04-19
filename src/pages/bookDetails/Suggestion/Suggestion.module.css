@@ -1,0 +1,83 @@
+:root{
+    --primary-color: #2196f3;
+}
+
+.titleTop{
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    padding: 1rem 0;
+}
+
+.sliderContainer{
+    margin: 1.5rem 0 !important;
+}
+
+.card{
+    margin: 1rem 0 !important ;
+}
+
+.imgContainer{
+    text-align: center;
+}
+
+.textContainer{
+    text-align: center;
+    padding: 0.7rem;
+}
+
+.cardImg{
+    width:  10rem;
+    height: 250px;
+    border-radius: 10px;
+}
+
+.link{
+    text-decoration: none;
+    color: black;
+}
+
+
+.link:hover{
+    color: var(--primary-color) !important;
+    cursor: pointer;
+}
+
+.title{
+    margin: 0;
+    font-size: 1.5rem;
+    line-clamp: 2;
+    height: 3rem;
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.author{
+    margin: 0;
+    margin-bottom: 0.5rem;
+    color: gray;
+    font-size: 0.7rem;
+}
+
+
+.condition{
+    margin: 0;
+    margin-bottom: 0.5rem;
+    font-size: 0.7rem;
+}
+
+.price{
+    margin: 0;
+    margin-bottom: 0.5rem;
+    color: rgb(0, 150, 150);
+}
+
+.addCartBtnContainer{
+    text-align: center !important;
+}
+
+.addCartBtn{
+    box-shadow: none !important;
+}
+
