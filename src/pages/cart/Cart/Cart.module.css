@@ -1,0 +1,30 @@
+
+.bookImg{
+    width: 90%;
+    border-radius: 15px;
+}
+
+.infoElements{
+    margin: 0;
+}
+
+.bookInfo{
+    margin-top: 0;
+    margin-bottom: 0.5rem ;
+}
+
+
+.colorTitle{
+    color: darkcyan;
+}
+
+.numberInput{
+    width: 80%;
+}
+
+
+@media only screen and (max-width: 769px){
+	.hidden{
+        display: none;
+    }
+}

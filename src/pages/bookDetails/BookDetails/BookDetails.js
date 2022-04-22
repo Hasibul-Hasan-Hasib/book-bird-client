@@ -1,5 +1,6 @@
 import React from 'react';
-import styles from './BookDetails.module.css'
+import styles from './BookDetails.module.css';
+import NavigationBar from '../../shared/NavigationBar/NavigationBar'
 import TopSearch from '../../shared/TopSearch/TopSearch';
 import Footer from '../../shared/Footer/Footer';
 import Details from '../Details/Details';
@@ -15,9 +16,10 @@ const BookDetails = () => {
 
     return (
         <>
+            <NavigationBar/>
             <TopSearch />
-                <Details/>
-                <Suggestion books={books}/>
+            <Details />
+            <Suggestion books={books} />
             <Footer />
         </>
     );

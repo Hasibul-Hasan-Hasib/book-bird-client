@@ -18,10 +18,13 @@ const Details = () => {
                         <h1 className={styles.title}>Shuggie Bain by
                             <span className={styles.colorTitle}> Douglas Stuart</span>
                         </h1>
+                        <h4 className={styles.title}>Publisher - <span className={styles.colorTitle}>XYZ limited</span></h4>
                         <h4 className={styles.title}>Condition - <span className={styles.colorTitle}>New</span></h4>
-                        <h1 className={styles.price}>$3.49</h1>
-                        <h4 className={styles.colorTitle}>Only 1 left</h4>
+                        <h1 className={styles.price}>£ 3.49</h1>
+                        <div>
                         <Button sx={{ marginBottom: '1rem' }} variant='outline'>Well Read</Button>
+                        <Button sx={{ marginBottom: '1rem', marginLeft:'1rem' }} variant='outline'>New</Button>
+                        </div>
                         <div className={styles.btnContainer}>
                             <Button className={styles.addCartBtn}>Add to Cart</Button>
                             <div className={styles.iconBtnContainer}>

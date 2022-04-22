@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './SideCar.module.css'
 import { Button, Grid, NumberInput } from "@mantine/core"
+import { Link } from 'react-router-dom';
 
 
 
@@ -8,7 +9,14 @@ const SideCart = () => {
 
     return (
         <div>
-            <Button className={styles.btn}>Continue to Checkout</Button>
+            <Grid>
+                <Grid.Col span={6}>
+                    <Link to='/cart'><Button className={styles.btn}>View Cart</Button></Link>
+                </Grid.Col>
+                <Grid.Col span={6}>
+                    <Link to='/checkout'><Button className={styles.btn}>Continue to Checkout</Button></Link>
+                </Grid.Col>
+            </Grid>
             <hr />
             <div className={styles.orderContainer}>
                 <div>
