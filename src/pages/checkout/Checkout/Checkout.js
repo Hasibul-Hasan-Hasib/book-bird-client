@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import styles from "./Checkout.module.css";
-import { At } from 'tabler-icons-react';
-import { Stepper, Button, Group, Container, Grid, TextInput, ScrollArea } from '@mantine/core';
+import logo from '../../../assets/image/logo/logo2.png'
+import { Stepper, Button, Group, Container, Image } from '@mantine/core';
+import FirstStepper from '../FirstStepper/FirstStepper';
+import { Check } from 'tabler-icons-react';
+import SecondStepper from '../SecondStepper/SecondStepper';
+import ThirdStepper from '../ThirdStepper/ThirdStepper';
 
 
 const Checkout = () => {
@@ -14,61 +18,32 @@ const Checkout = () => {
     return (
         <>
             <div >
-                <h1 className={styles.checkoutTitle}>STAY MADE UP</h1>
+                <Image className={styles.logo} src={logo} alt="logo"></Image>
             </div>
+            <hr className={styles.underline} />
             <Container size="lg">
                 <div>
-                    <Stepper active={active} onStepClick={setActive} breakpoint="sm">
-                        <Stepper.Step label="First step" description="Create an account">
-                            <Container size="md" sx={{ marginTop: '2rem' }}>
-                                <Grid columns={12} justify="space-between">
-                                    <Grid.Col span={7} className={styles.box} sx={{ height: 280 }}>
-                                        <h2 >Checkout method</h2>
-                                        <hr />
-                                        <p>Type in your email to get started</p>
-                                        <TextInput label="Your email" placeholder="Your email" icon={<At size={14} />} className={styles.emailField} />
-                                        <Button className={styles.emailBtn}>Continue</Button>
-                                    </Grid.Col>
-                                    <Grid.Col span={4} className={styles.box}>
-                                        <h2>Products</h2>
-                                        <hr />
-                                        <ScrollArea style={{ height: 150,padding:'0 1rem'}}>
-                                            <Grid>
-                                                <Grid.Col span={4}><img src="https://productimages.worldofbooks.com/1472154665_thumbnail.jpg" alt="book pic" className={styles.bookImg}/></Grid.Col>
-                                                <Grid.Col span={8}>
-                                                    
-                                                </Grid.Col>
-                                            </Grid>
-                                        </ScrollArea>
-                                        <hr />
-                                        <div className={styles.prices}>
-                                            <h4 className={styles.price}>Subtotal</h4>
-                                            <h4 className={styles.price}>$12.25</h4>
-                                        </div>
-                                        <hr style={{width:'90%'}}/>
-                                        <div className={styles.prices}>
-                                            <h4 className={styles.price}>Grand total</h4>
-                                            <h4 className={styles.price}>$12.25</h4>
-                                        </div>
-                                    </Grid.Col>
-                                </Grid>
-                            </Container>
+                    <Stepper active={active} onStepClick={setActive} size="sm" breakpoint={400}>
+                        <Stepper.Step icon={<Check />} label="Basket">
+                            <FirstStepper />
                         </Stepper.Step>
-                        <Stepper.Step label="Second step" description="Verify email">
+                        <Stepper.Step icon={<Check />} label="Delivery">
+                            <SecondStepper />
                         </Stepper.Step>
-                        <Stepper.Step label="Final step" description="Get full access">
-                            Step 3 content: Get full access
+                        <Stepper.Step icon={<Check />} label="Payment">
+                            <ThirdStepper />
                         </Stepper.Step>
                         <Stepper.Completed>
-                            Completed, click back button to get to previous step
+                            <div>
+                                <h1 style={{textAlign:'center'}}>Congratulations your purchase is <span style={{color:"#2196f3"}}>Successful</span></h1>
+                            </div>
                         </Stepper.Completed>
                     </Stepper>
                     <Group position="center" mt="xl">
                         <Button variant="default" onClick={prevStep}>Back</Button>
-                        <Button onClick={nextStep}>Next step</Button>
+                        <Button onClick={nextStep}>Continue Process</Button>
                     </Group>
                 </div>
-
             </Container>
         </>
     );

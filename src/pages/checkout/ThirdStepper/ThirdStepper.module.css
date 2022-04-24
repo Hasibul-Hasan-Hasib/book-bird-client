@@ -1,0 +1,13 @@
+.box {
+  border: 1px solid rgb(160, 151, 151);
+  border-radius: 5px;
+  text-align: center;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+.alignItem {
+  margin: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,22 @@
+.box {
+  border: 1px solid rgb(160, 151, 151);
+  border-radius: 5px;
+  text-align: center;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+.emailField {
+  width: 80%;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.emailBtn {
+  width: 80%;
+  margin: 1rem 0;
+}
+
+
+
+

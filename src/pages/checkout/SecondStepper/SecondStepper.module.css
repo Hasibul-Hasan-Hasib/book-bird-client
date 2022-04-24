@@ -1,0 +1,30 @@
+.box {
+  border: 1px solid rgb(160, 151, 151);
+  border-radius: 5px;
+  text-align: center;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+.infoContainer{
+    margin: 2rem 4rem;
+}
+
+
+.label{
+  text-align: left;
+}
+
+.itemAlign{
+    text-align: left;
+    margin: 0.5rem 0;
+}
+
+
+.multipleItemAlign{
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem 0;
+}
