@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './Shop.module.css'
-import { Button, Container, Grid, Group, NumberInput, RangeSlider, Select, Text } from '@mantine/core'
+import { Button, Container, Grid, Group, NumberInput,  Select, Text } from '@mantine/core'
 import Filter from '../Filter/Filter';
 import Products from '../Products/Products';
 import TopSearch from '../../shared/TopSearch/TopSearch';
@@ -24,37 +24,37 @@ const BookSearch = () => {
 
 
 
-
     // const filteredData = categoryFilter.filter(item => con !== null ? con === "Good" ? item.Condition === "Good" : con === 'Well Read' ? item.Condition === "Well Read" : item.Condition === "Very Good" : item)
     // console.log(filteredData);
+
     const [category, setCategory] = useState(categoryName);
     const [condition, setCondition] = useState('');
     const [binding, setBinding] = useState('')
+    const [low, setLow] = useState(10)
+    const [high, setHigh] = useState(100)
+    
     // const [priceRange, setPriceRange] = useState([10,100]);
-    const [low,setLow] = useState(10)
-    const [high,setHigh] = useState(100)
 
 
 
-
-    const categoryFilter = items.filter(item => category !== "All" ? item.Category1 === category || item.Category2 === category : item)
+    const categoryFilter = items.filter(item => category !== "all" ? item.Category1 === category || item.Category2 === category : item)
 
     const filter = () => {
         const conditionFilter = categoryFilter.filter(item => condition ? item.Condition === condition : item)
         const bindingFilter = conditionFilter.filter(item => binding ? item.Binding_type === binding : item)
         const priceFilter = bindingFilter.filter(item=> high&&low ? low <= parseFloat(item.Price.slice(1,10)) && parseFloat(item.Price.slice(1,10)) <= high : item)
-        // // const priceFilter = bindingFilter.filter(item=> {
-        // //     const price = parseFloat(item.Price.slice(1,10))
-        // //     if(priceRange[0] < price < priceRange[1]){
-        // //         console.log(item.Price);
-        // //     }
-        // // })
+        // const priceFilter = bindingFilter.filter(item=> {
+        //     const price = parseFloat(item.Price.slice(1,10))
+        //     if(priceRange[0] < price < priceRange[1]){
+        //         console.log(item.Price);
+        //     }
+        // })
         // console.log(priceFilter);
         return priceFilter;
     }
 
     const reset = () => {
-        setCategory('All')
+        setCategory('all')
         setCondition('')
         setBinding('')
         setLow(10)
@@ -79,7 +79,7 @@ const BookSearch = () => {
                             value={category}
                             onChange={setCategory}
                             data={[
-                                { value: 'All', label: 'All' },
+                                { value: 'all', label: 'All' },
                                 { value: 'Fiction Books', label: 'Fiction Books' },
                                 { value: 'Non-Fiction Books', label: 'Non-Fiction Books' },
                                 { value: "Children's Books", label: "Children's Books" },
@@ -149,7 +149,7 @@ const BookSearch = () => {
                         />
                         <br />
                         <Text weight={500} size="sm">Price Range</Text>
-                        <Group style={{ display: 'flex', justifyContent: 'space-between', marginTop: '0.2rem', marginBottom:'1.5rem' }}>
+                        <Group style={{ display: 'flex', justifyContent: 'space-between', marginTop: '0.2rem', marginBottom:'1rem' }}>
                             <NumberInput
                                 value={low}
                                 sx={{ width: "45%" }}

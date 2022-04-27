@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styles from './TopSearchBar.module.css';
 import { Button, Container, Grid, Group, Drawer, Select, TextInput } from '@mantine/core';
-import { Link } from 'react-router-dom'
 import logo1 from '../../../../assets/image/logo/logo1.png';
 import { ShoppingCart } from 'tabler-icons-react';
 import SideCart from '../SideCart/SideCart';
@@ -19,7 +18,7 @@ const TopSearchBar = () => {
             <Container size="lg">
                 <Grid columns={24} className={styles.searchBar}>
                     <Grid.Col span={3} >
-                        <Link to='/home'><img src={logo1} alt="logo" className={styles.logo} /></Link>
+                        <a href='/home'><img src={logo1} alt="logo" className={styles.logo} /></a>
                     </Grid.Col>
 
                     {/* Search Fie */}

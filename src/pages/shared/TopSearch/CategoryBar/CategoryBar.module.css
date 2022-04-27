@@ -18,6 +18,11 @@
     color: #2196f3;
 }
 
+.link{
+    text-decoration: none;
+    color: black;
+}
+
 .underLine{
     border-top: 3px solid darkcyan;
 }

@@ -6,25 +6,24 @@ import { Heart } from 'tabler-icons-react';
 
 
 
-const Details = () => {
+const Details = (props) => {
+
+    const {Title,Author,Image,Publisher,Condition,Price,Summary_Description} = props.book;
+
     return (
         <>
             <Container size='lg' >
                 <Grid gutter="xs" justify="center" align="flex-start" className={styles.detailsContainer}>
                     <Grid.Col span={12} xs={4} md={3} >
-                        <img className={styles.bookImg} src="https://productimages.worldofbooks.com/152901929X.jpg" alt="" />
+                        <img className={styles.bookImg} src={Image} alt="" />
                     </Grid.Col>
                     <Grid.Col span={12} xs={8} md={5}>
-                        <h1 className={styles.title}>Shuggie Bain by
-                            <span className={styles.colorTitle}> Douglas Stuart</span>
-                        </h1>
-                        <h4 className={styles.title}>Publisher - <span className={styles.colorTitle}>XYZ limited</span></h4>
-                        <h4 className={styles.title}>Condition - <span className={styles.colorTitle}>New</span></h4>
-                        <h1 className={styles.price}>£ 3.49</h1>
-                        <div>
-                        <Button sx={{ marginBottom: '1rem' }} variant='outline'>Well Read</Button>
-                        <Button sx={{ marginBottom: '1rem', marginLeft:'1rem' }} variant='outline'>New</Button>
-                        </div>
+                        <h1 className={styles.title}>{Title?.split('by',1)}<span className={styles.colorTitle}>by</span> {Author}</h1>
+                        <h4 className={styles.title}>Publisher - <span className={styles.colorTitle}>{Publisher}</span></h4>
+                        <h4 className={styles.title}>Author - <span className={styles.colorTitle}>{Publisher}</span></h4>
+                        <h4 className={styles.title}>Condition - <span className={styles.colorTitle}>{Condition}</span></h4>
+                        <h1 className={styles.price}>£ {Price?.slice(1)} </h1>
+                        <Button sx={{ marginBottom: '1rem' }} variant='outline'>{Condition}</Button>
                         <div className={styles.btnContainer}>
                             <Button className={styles.addCartBtn}>Add to Cart</Button>
                             <div className={styles.iconBtnContainer}>
@@ -35,7 +34,7 @@ const Details = () => {
                     <Grid.Col span={12} md={4}>
                         <div>
                             <h2>Summary</h2>
-                            <p>A heart-wrenchingly moving first novel set in Glasgow during the Thatcher years, Shuggie Bain tells the story of a boy's doomed attempt to save his proud, alcoholic mother from her addiction.</p>
+                            <p>{Summary_Description?.slice(0,350).split(". ",1)}.</p>
                         </div>
                         <hr />
                         <div>

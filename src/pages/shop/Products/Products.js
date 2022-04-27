@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './Products.module.css'
-import useData from '../../../hooks/useData';
 import Card from '../../shared/Card/Card';
 import { Grid } from '@mantine/core';
 
