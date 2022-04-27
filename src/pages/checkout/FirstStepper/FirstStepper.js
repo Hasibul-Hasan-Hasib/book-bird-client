@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './FirstStepper.module.css'
+import Items from '../Items/Items';
 import { At } from 'tabler-icons-react';
 import { Button, Container, Grid, TextInput } from '@mantine/core';
-import Products from '../Products/Products';
 
 
 
@@ -19,7 +19,7 @@ const FirstStepper = () => {
                         <Button className={styles.emailBtn}>Continue</Button>
                     </Grid.Col>
                     <Grid.Col span={12} sm={4} className={styles.box} sx={{ height: 410 }}>
-                        <Products />
+                        <Items />
                     </Grid.Col>
                 </Grid>
             </Container>

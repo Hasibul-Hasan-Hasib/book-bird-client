@@ -1,8 +1,7 @@
 import React from 'react';
 import styles from './ThirdStepper.module.css';
-import Products from '../Products/Products';
+import Items from '../Items/Items'; 
 import { Button, Container, Grid } from '@mantine/core';
-
 
 
 const ThirdStepper = () => {
@@ -38,7 +37,7 @@ const ThirdStepper = () => {
                         </div>
                     </Grid.Col>
                     <Grid.Col span={12} sm={4} className={styles.box} sx={{ height: 410 }}>
-                        <Products />
+                        <Items />
                     </Grid.Col>
                 </Grid>
             </Container>

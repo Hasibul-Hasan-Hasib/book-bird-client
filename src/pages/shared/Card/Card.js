@@ -5,9 +5,9 @@ import React from 'react';
 
 
 const Card = (props) => {
-    const { Title, Condition, Image, Price, ISBN_10 } = props.book
+    const { Title, Condition, Image, Price } = props.book
     return (
-        <Grid.Col span={6} xs={4} sm={3} lg={2} className={styles.card}>
+        <>
             <div className={styles.imgContainer}>
                 <Link to={`/books/bookDetails`}>
                     <img src={Image} className={styles.cardImg} alt="" />
@@ -23,7 +23,7 @@ const Card = (props) => {
             <div className={styles.addCartBtnContainer}>
                 <Button className={styles.addCartBtn}>Add to Cart</Button>
             </div>
-        </Grid.Col>
+        </>
     );
 };
 

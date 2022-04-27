@@ -24,7 +24,10 @@ const BestSellingFiction = (props) => {
                 </NavLink>
                 <Grid className={styles.cardContainer}>
                     {
-                        books.slice(0, 6).map(book => <Card book={book} />)
+                        books.slice(0, 6).map(book =>
+                            <Grid.Col span={6} xs={4} sm={3} lg={2} className={styles.card}>
+                                <Card book={book} />
+                            </Grid.Col>)
                     }
                 </Grid>
                 <hr />

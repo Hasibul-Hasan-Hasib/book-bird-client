@@ -1,35 +1,37 @@
-.cardContainer{
-    height: 30rem !important;
-    overflow: hidden;
+.cardContainer {
+  height: 30rem !important;
+  overflow: hidden;
 }
 
-.link{
-    text-decoration: none;
+.link {
+  text-decoration: none;
 }
 
-.titleContainer{
-    display: flex;
-    color: black;
-    justify-content: space-between;
-    padding: 0 1rem;
+.titleContainer {
+  display: flex;
+  color: black;
+  justify-content: space-between;
+  padding: 0 1rem;
 }
 
-.viewMoreBtn{
-    margin: 0;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    justify-content: right;
+.viewMoreBtn {
+  margin: 0;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: right;
 }
 
-.titleContainer:hover{
-    color: #2196f3;
+.titleContainer:hover {
+  color: #2196f3;
 }
 
-.title{
-    font-size: 1.7rem;
-    font-weight: 600;
-    margin: 0;
+.title {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin: 0;
 }
 
-
+.card {
+  margin: 1rem 0 !important ;
+}

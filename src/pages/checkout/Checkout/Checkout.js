@@ -6,6 +6,7 @@ import FirstStepper from '../FirstStepper/FirstStepper';
 import { Check } from 'tabler-icons-react';
 import SecondStepper from '../SecondStepper/SecondStepper';
 import ThirdStepper from '../ThirdStepper/ThirdStepper';
+import { Link } from 'react-router-dom';
 
 
 const Checkout = () => {
@@ -42,6 +43,7 @@ const Checkout = () => {
                     <Group position="center" mt="xl">
                         <Button variant="default" onClick={prevStep}>Back</Button>
                         <Button onClick={nextStep}>Continue Process</Button>
+                        <Link to="/home"><Button variant='default'>Go Home</Button></Link>
                     </Group>
                 </div>
             </Container>

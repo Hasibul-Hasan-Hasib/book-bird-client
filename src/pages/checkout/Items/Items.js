@@ -1,11 +1,11 @@
 import React from 'react';
-import styles from './Products.module.css'
+import styles from './Items.module.css'
 import {  Grid,  ScrollArea } from '@mantine/core';
 
 
 
 
-const Products = () => {
+const Items = () => {
     return (
         <>
             <h2>Products</h2>
@@ -43,4 +43,4 @@ const Products = () => {
     );
 };
 
-export default Products;
+export default Items;

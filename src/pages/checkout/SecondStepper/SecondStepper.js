@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './SecondStepper.module.css';
+import Items from '../Items/Items';
 import { DatePicker } from '@mantine/dates';
 import { Button, Container, Grid, TextInput, Select, Textarea } from '@mantine/core';
-import Products from '../Products/Products';
 
 
 
@@ -77,7 +77,7 @@ const SecondStepper = () => {
                         </div>
                     </Grid.Col>
                     <Grid.Col span={12} sm={4} className={styles.box} sx={{ height: 410 }}>
-                        <Products />
+                        <Items />
                     </Grid.Col>
                 </Grid>
             </Container>
