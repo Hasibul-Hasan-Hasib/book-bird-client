@@ -2,6 +2,7 @@ import { Container } from '@mantine/core';
 import styles from './CategoryBar.module.css';
 import React from 'react';
 import { Menu } from '@mantine/core';
+import { Link } from 'react-router-dom';
 
 
 
@@ -37,13 +38,13 @@ const CategoryBar = () => {
                         }
                     >
                         <Menu.Label>Fiction Books</Menu.Label>
-                        <Menu.Item ><a className={styles.link} href='/category/Fiction Books'>Fiction Books</a></Menu.Item>
-                        <Menu.Item ><a className={styles.link} href='/category/Modern Fiction'>Modern Fiction</a></Menu.Item>
-                        <Menu.Item ><a className={styles.link} href='/category/Classic Fiction'>Classic Fiction</a></Menu.Item>
-                        <Menu.Item ><a className={styles.link} href='/category/Fantasy'>Fantasy</a></Menu.Item>
-                        <Menu.Item ><a className={styles.link} href='/category/Romance'>Romance</a></Menu.Item>
-                        <Menu.Item ><a className={styles.link} href='/category/Adventure'>Adventure</a></Menu.Item>
-                        <Menu.Item ><a className={styles.link} href='/category/all'>See All Books</a></Menu.Item>
+                        <Menu.Item ><Link className={styles.link} to='/category/Fiction Books'>Fiction Books</Link></Menu.Item>
+                        <Menu.Item ><Link className={styles.link} to='/category/Modern Fiction'>Modern Fiction</Link></Menu.Item>
+                        <Menu.Item ><Link className={styles.link} to='/category/Classic Fiction'>Classic Fiction</Link></Menu.Item>
+                        <Menu.Item ><Link className={styles.link} to='/category/Fantasy'>Fantasy</Link></Menu.Item>
+                        <Menu.Item ><Link className={styles.link} to='/category/Romance'>Romance</Link></Menu.Item>
+                        <Menu.Item ><Link className={styles.link} to='/category/Adventure'>Adventure</Link></Menu.Item>
+                        <Menu.Item ><Link className={styles.link} to='/category/all'>See All Books</Link></Menu.Item>
                     </Menu>
 
 
@@ -55,13 +56,13 @@ const CategoryBar = () => {
                         }
                     >
                         <Menu.Label>Non-Fiction Books</Menu.Label>
-                        <Menu.Item ><a className={styles.link} href='/category/Fiction Books'>Fiction Books</a></Menu.Item>
-                        <Menu.Item ><a className={styles.link} href='/category/Modern Fiction'>Modern Fiction</a></Menu.Item>
-                        <Menu.Item ><a className={styles.link} href='/category/Classic Fiction'>Classic Fiction</a></Menu.Item>
-                        <Menu.Item ><a className={styles.link} href='/category/Fantasy'>Fantasy</a></Menu.Item>
-                        <Menu.Item ><a className={styles.link} href='/category/Romance'>Romance</a></Menu.Item>
-                        <Menu.Item ><a className={styles.link} href='/category/Adventure'>Adventure</a></Menu.Item>
-                        <Menu.Item ><a className={styles.link} href='/category/all'>See All Books</a></Menu.Item>
+                        <Menu.Item ><Link className={styles.link} to='/category/Fiction Books'>Fiction Books</Link></Menu.Item>
+                        <Menu.Item ><Link className={styles.link} to='/category/Modern Fiction'>Modern Fiction</Link></Menu.Item>
+                        <Menu.Item ><Link className={styles.link} to='/category/Classic Fiction'>Classic Fiction</Link></Menu.Item>
+                        <Menu.Item ><Link className={styles.link} to='/category/Fantasy'>Fantasy</Link></Menu.Item>
+                        <Menu.Item ><Link className={styles.link} to='/category/Romance'>Romance</Link></Menu.Item>
+                        <Menu.Item ><Link className={styles.link} to='/category/Adventure'>Adventure</Link></Menu.Item>
+                        <Menu.Item ><Link className={styles.link} to='/category/all'>See All Books</Link></Menu.Item>
                     </Menu>
 
 

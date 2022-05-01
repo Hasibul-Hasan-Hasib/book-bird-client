@@ -4,7 +4,7 @@ import BestSelling from '../BestSelling/BestSelling';
 import Banner from '../Banner/Banner';
 import HomeBrowse from '../HomeBrowse/HomeBrowse';
 import HomeHero from '../HomeHero/HomeHero';
-import useData from '../../../hooks/useData';
+import useProductData from '../../../hooks/useProductData';
 import Blogs from '../Blogs/Blogs';
 import Footer from '../../shared/Footer/Footer'
 import Testimonial from '../Testimonial/Testimonial';
@@ -13,7 +13,7 @@ import TopSearch from '../../shared/TopSearch/TopSearch';
 
 const Home = () => {
 
-    const books = useData();
+    const books = useProductData();
 
 
     const fictionData = [

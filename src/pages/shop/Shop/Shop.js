@@ -6,11 +6,11 @@ import Products from '../Products/Products';
 import TopSearch from '../../shared/TopSearch/TopSearch';
 import Footer from '../../shared/Footer/Footer';
 import { useParams } from 'react-router-dom';
-import useData from '../../../hooks/useData';
+import useProductData from '../../../hooks/useProductData';
 
 const BookSearch = () => {
 
-    const items = useData();
+    const items = useProductData();
 
 
     const { categoryName } = useParams();
@@ -178,6 +178,7 @@ const BookSearch = () => {
                             sx={{width:"100%"}}
                             onChange={setPriceRange}
                             /> */}
+                            
                         </Group>
                         <br />
                         <Group style={{ display: 'flex', justifyContent: 'space-around' }}>
@@ -186,7 +187,7 @@ const BookSearch = () => {
                         {/* <Filter /> */}
                     </Grid.Col>
                     <Grid.Col span={8}>
-                        <Products books={filter() ? filter() : categoryFilter} />
+                        <Products books={filter() ? filter() : categoryFilter.slice(0, 20)} />
                     </Grid.Col>
                 </Grid>
             </Container>

@@ -18,7 +18,7 @@ const TopSearchBar = () => {
             <Container size="lg">
                 <Grid columns={24} className={styles.searchBar}>
                     <Grid.Col span={3} >
-                        <a href='/home'><img src={logo1} alt="logo" className={styles.logo} /></a>
+                        <a href='/'><img src={logo1} alt="logo" className={styles.logo} /></a>
                     </Grid.Col>
 
                     {/* Search Fie */}

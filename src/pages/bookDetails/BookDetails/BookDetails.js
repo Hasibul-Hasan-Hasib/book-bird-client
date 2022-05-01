@@ -5,14 +5,14 @@ import TopSearch from '../../shared/TopSearch/TopSearch';
 import Footer from '../../shared/Footer/Footer';
 import Details from '../Details/Details';
 import Suggestion from '../Suggestion/Suggestion';
-import useData from '../../../hooks/useData';
+import useProductData from '../../../hooks/useProductData';
 import { useParams } from 'react-router-dom'
 
 
 
 const BookDetails = () => {
 
-    const books = useData();
+    const books = useProductData();
     console.log(books);
     const { id } = useParams();
 
