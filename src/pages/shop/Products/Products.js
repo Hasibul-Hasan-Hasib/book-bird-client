@@ -11,7 +11,7 @@ const Products = (props) => {
     const [activePage, setPage] = useState(1);
 
     const itemPerPage = 24;
-    const pageVisited = activePage * itemPerPage;
+    const pageVisited = (activePage-1) * itemPerPage;
     console.log(items);
 
     return (
@@ -24,7 +24,7 @@ const Products = (props) => {
                 }
             </Grid>
             <div className={styles.paginationContainer}>
-                <Pagination size="md" siblings={3} page={activePage} onChange={setPage} total={Math.floor(items.length / itemPerPage)} />
+                <Pagination size="md" siblings={3} page={activePage} onChange={setPage} total={Math.ceil(items.length / itemPerPage)} />
             </div>
         </>
     );

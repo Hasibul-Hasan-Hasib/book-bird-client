@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import styles from './Shop.module.css'
-import { Button, Container, Grid, Group, NumberInput,  Select, Text } from '@mantine/core'
-import Filter from '../Filter/Filter';
+import { Button, Container, Grid, Group, Loader, NumberInput, Select, Text } from '@mantine/core'
+// import Filter from '../Filter/Filter';
 import Products from '../Products/Products';
 import TopSearch from '../../shared/TopSearch/TopSearch';
 import Footer from '../../shared/Footer/Footer';
 import { useParams } from 'react-router-dom';
 import useProductData from '../../../hooks/useProductData';
 
-const BookSearch = () => {
+const Shop = () => {
 
-    const items = useProductData();
+    const { books, isLoading } = useProductData();
 
 
     const { categoryName } = useParams();
@@ -32,17 +32,17 @@ const BookSearch = () => {
     const [binding, setBinding] = useState('')
     const [low, setLow] = useState(10)
     const [high, setHigh] = useState(100)
-    
+
     // const [priceRange, setPriceRange] = useState([10,100]);
 
 
 
-    const categoryFilter = items.filter(item => category !== "all" ? item.Category1 === category || item.Category2 === category : item)
+    const categoryFilter = books.filter(item => category !== "all" ? item.Category1 === category || item.Category2 === category : item)
 
     const filter = () => {
         const conditionFilter = categoryFilter.filter(item => condition ? item.Condition === condition : item)
         const bindingFilter = conditionFilter.filter(item => binding ? item.Binding_type === binding : item)
-        const priceFilter = bindingFilter.filter(item=> high&&low ? low <= parseFloat(item.Price.slice(1,10)) && parseFloat(item.Price.slice(1,10)) <= high : item)
+        const priceFilter = bindingFilter.filter(item => high && low ? low <= parseFloat(item.Price.slice(1, 10)) && parseFloat(item.Price.slice(1, 10)) <= high : item)
         // const priceFilter = bindingFilter.filter(item=> {
         //     const price = parseFloat(item.Price.slice(1,10))
         //     if(priceRange[0] < price < priceRange[1]){
@@ -149,7 +149,7 @@ const BookSearch = () => {
                         />
                         <br />
                         <Text weight={500} size="sm">Price Range</Text>
-                        <Group style={{ display: 'flex', justifyContent: 'space-between', marginTop: '0.2rem', marginBottom:'1rem' }}>
+                        <Group style={{ display: 'flex', justifyContent: 'space-between', marginTop: '0.2rem', marginBottom: '1rem' }}>
                             <NumberInput
                                 value={low}
                                 sx={{ width: "45%" }}
@@ -178,7 +178,7 @@ const BookSearch = () => {
                             sx={{width:"100%"}}
                             onChange={setPriceRange}
                             /> */}
-                            
+
                         </Group>
                         <br />
                         <Group style={{ display: 'flex', justifyContent: 'space-around' }}>
@@ -187,7 +187,15 @@ const BookSearch = () => {
                         {/* <Filter /> */}
                     </Grid.Col>
                     <Grid.Col span={8}>
-                        <Products books={filter() ? filter() : categoryFilter.slice(0, 20)} />
+                        {
+                            isLoading === true ?
+                                <div style={{ height: "50vh", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                                    <Loader></Loader>
+                                    <h2 style={{ marginLeft: "0.5rem" }}>Loading ...</h2>
+                                </div>
+                                :
+                                <Products books={filter() ? filter() : categoryFilter} />
+                        }
                     </Grid.Col>
                 </Grid>
             </Container>
@@ -196,4 +204,4 @@ const BookSearch = () => {
     );
 };
 
-export default BookSearch;
+export default Shop;

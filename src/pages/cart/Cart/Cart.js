@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Cart.module.css'
 import { Button, Container, Grid, NumberInput } from '@mantine/core';
 import NavigationBar from '../../shared/NavigationBar/NavigationBar';
@@ -6,11 +6,15 @@ import TopSearch from '../../shared/TopSearch/TopSearch'
 import Footer from '../../shared/Footer/Footer';
 import { Link } from 'react-router-dom';
 import { Check, Trash} from 'tabler-icons-react';
+// import useProductData from '../../../hooks/useProductData';
 
 
 
 const Cart = () => {
 
+    // const items = useProductData();
+    const [quantity,setQuantity] = useState(1);
+    const price = (3.49 * quantity?quantity:0).toFixed(2);
 
 
     return (
@@ -40,14 +44,15 @@ const Cart = () => {
                                     <h3 className={styles.bookInfo}>Category <span className={styles.colorTitle}>Fiction Books</span></h3>
                                 </Grid.Col>
                                 <Grid.Col span={19} sm={3} >
-                                    <h3 className={styles.infoElements}>$3.49</h3>
+                                    <h3 className={styles.infoElements}>£{price}</h3>
                                 </Grid.Col>
                                 <Grid.Col span={19} sm={3} >
                                     <NumberInput
                                         defaultValue={18}
                                         placeholder="Your age"
-                                        required
+                                        onChange={setQuantity}
                                         className={styles.numberInput}
+                                        min={0}
                                     />
                                 </Grid.Col>
                                 <Grid.Col sm={3} >

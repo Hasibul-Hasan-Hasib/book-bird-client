@@ -9,12 +9,13 @@ import Blogs from '../Blogs/Blogs';
 import Footer from '../../shared/Footer/Footer'
 import Testimonial from '../Testimonial/Testimonial';
 import TopSearch from '../../shared/TopSearch/TopSearch';
+import { Loader } from '@mantine/core';
 
 
 const Home = () => {
 
-    const books = useProductData();
-
+    const { books, isLoading } = useProductData();
+    console.log(books);
 
     const fictionData = [
         {
@@ -54,19 +55,29 @@ const Home = () => {
                 <title>This is home</title>
             </head>
             <body>
-                <NavigationBar/>
+                <NavigationBar />
                 <TopSearch />
-                <Banner />
-                <BestSelling title={fiction} books={books} />
-                <HomeBrowse title={fiction} data={fictionData} />
-                <HomeHero />
-                <HomeBrowse title={bookBird} data={fictionData} />
-                <BestSelling title={nonFiction} books={books} />
-                <HomeBrowse title={nonFiction} data={fictionData} />
-                <Blogs />
-                <BestSelling title={children} books={books} />
-                <HomeBrowse title={children} data={fictionData} />
-                <Testimonial />
+                {
+                    isLoading ?
+                        <div style={{ height: "50vh", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                            <Loader></Loader>
+                            <h2 style={{ marginLeft: "0.5rem" }}>Loading ...</h2>
+                        </div>
+                        :
+                        <>
+                            <Banner />
+                            <BestSelling title={fiction} books={books} isLoading={isLoading} />
+                            <HomeBrowse title={fiction} data={fictionData} />
+                            <HomeHero />
+                            <HomeBrowse title={bookBird} data={fictionData} />
+                            <BestSelling title={nonFiction} books={books} isLoading={isLoading} />
+                            <HomeBrowse title={nonFiction} data={fictionData} />
+                            <Blogs />
+                            <BestSelling title={children} books={books} isLoading={isLoading} />
+                            <HomeBrowse title={children} data={fictionData} />
+                            <Testimonial />
+                        </>
+                }
                 <Footer />
             </body>
         </>

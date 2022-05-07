@@ -24,7 +24,7 @@ const BookDetails = () => {
         <>
             <NavigationBar />
             <TopSearch />
-            <Details book={book ? book : "nothing"} />
+            <Details book={book ? book : []} />
             <Suggestion books={books} />
             <Footer />
         </>

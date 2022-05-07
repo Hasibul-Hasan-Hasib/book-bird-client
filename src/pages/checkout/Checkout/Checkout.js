@@ -19,7 +19,7 @@ const Checkout = () => {
     return (
         <>
             <div >
-                <Image className={styles.logo} src={logo} alt="logo"></Image>
+                <Link to='/'><Image className={styles.logo} src={logo} alt="logo"></Image></Link>
             </div>
             <hr className={styles.underline} />
             <Container size="lg">

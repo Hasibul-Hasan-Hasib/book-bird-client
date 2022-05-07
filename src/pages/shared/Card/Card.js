@@ -1,11 +1,15 @@
-import { Button } from '@mantine/core';
-import styles from './Card.module.css';
-import { Link } from 'react-router-dom';
 import React from 'react';
+import styles from './Card.module.css';
+import { Button } from '@mantine/core';
+import { Link } from 'react-router-dom';
 
 
 const Card = (props) => {
     const { Title, Condition, Image, Price, Sku } = props.book
+
+    
+
+
 
     return (
         <>
@@ -22,7 +26,7 @@ const Card = (props) => {
                 <h2 className={styles.price}>£ {Price.slice(1)}</h2>
             </div>
             <div className={styles.addCartBtnContainer}>
-                <Button className={styles.addCartBtn}>Add to Cart</Button>
+                <Button component={Link} className={styles.addCartBtn} to={`/books/bookDetails/${Sku}`}>Add to Cart</Button>
             </div>
         </>
     );

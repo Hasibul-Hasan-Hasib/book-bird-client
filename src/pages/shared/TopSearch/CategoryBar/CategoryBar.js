@@ -2,7 +2,7 @@ import { Container } from '@mantine/core';
 import styles from './CategoryBar.module.css';
 import React from 'react';
 import { Menu } from '@mantine/core';
-import { Link } from 'react-router-dom';
+import { Link, } from 'react-router-dom';
 
 
 
@@ -23,7 +23,7 @@ const CategoryBar = () => {
                         <Menu.Item >Settings</Menu.Item>
                         <Menu.Item >Messages</Menu.Item>
                         <Menu.Item >Gallery</Menu.Item>
-                        <Menu.Item>Search</Menu.Item>
+                        <Menu.Item >Search</Menu.Item>
                         <Menu.Item >Transfer my data</Menu.Item>
                         <Menu.Item >Delete my account</Menu.Item>
 
@@ -38,13 +38,13 @@ const CategoryBar = () => {
                         }
                     >
                         <Menu.Label>Fiction Books</Menu.Label>
-                        <Menu.Item ><Link className={styles.link} to='/category/Fiction Books'>Fiction Books</Link></Menu.Item>
-                        <Menu.Item ><Link className={styles.link} to='/category/Modern Fiction'>Modern Fiction</Link></Menu.Item>
-                        <Menu.Item ><Link className={styles.link} to='/category/Classic Fiction'>Classic Fiction</Link></Menu.Item>
-                        <Menu.Item ><Link className={styles.link} to='/category/Fantasy'>Fantasy</Link></Menu.Item>
-                        <Menu.Item ><Link className={styles.link} to='/category/Romance'>Romance</Link></Menu.Item>
-                        <Menu.Item ><Link className={styles.link} to='/category/Adventure'>Adventure</Link></Menu.Item>
-                        <Menu.Item ><Link className={styles.link} to='/category/all'>See All Books</Link></Menu.Item>
+                        <Menu.Item component={Link} className={styles.link} to="/category/Fiction Books" >All Fiction Books</Menu.Item>
+                        <Menu.Item component={Link} className={styles.link} to="/category/Modern Fiction">Modern Fiction</Menu.Item>
+                        <Menu.Item component={Link} className={styles.link} to="/category/Classic Fiction">Classic Fiction</Menu.Item>
+                        <Menu.Item component={Link} className={styles.link} to="/category/Fantasy">Fantasy</Menu.Item>
+                        <Menu.Item component={Link} className={styles.link} to="/category/Romance">Romance</Menu.Item>
+                        <Menu.Item component={Link} className={styles.link} to="/category/Adventure">Adventure</Menu.Item>
+                        <Menu.Item component={Link} className={styles.link} to="/category/all">See All Books</Menu.Item>
                     </Menu>
 
 
@@ -56,13 +56,13 @@ const CategoryBar = () => {
                         }
                     >
                         <Menu.Label>Non-Fiction Books</Menu.Label>
-                        <Menu.Item ><Link className={styles.link} to='/category/Fiction Books'>Fiction Books</Link></Menu.Item>
-                        <Menu.Item ><Link className={styles.link} to='/category/Modern Fiction'>Modern Fiction</Link></Menu.Item>
-                        <Menu.Item ><Link className={styles.link} to='/category/Classic Fiction'>Classic Fiction</Link></Menu.Item>
-                        <Menu.Item ><Link className={styles.link} to='/category/Fantasy'>Fantasy</Link></Menu.Item>
-                        <Menu.Item ><Link className={styles.link} to='/category/Romance'>Romance</Link></Menu.Item>
-                        <Menu.Item ><Link className={styles.link} to='/category/Adventure'>Adventure</Link></Menu.Item>
-                        <Menu.Item ><Link className={styles.link} to='/category/all'>See All Books</Link></Menu.Item>
+                        <Menu.Item component={Link} className={styles.link} to="/category/Non-Fiction Books">All Non-Fiction Books</Menu.Item>
+                        <Menu.Item component={Link} className={styles.link} to="/category/Biography and True Stories" >Biography and True Stories</Menu.Item>
+                        <Menu.Item component={Link} className={styles.link} to="/category/English Language Teaching">English Language Teaching</Menu.Item>
+                        <Menu.Item component={Link} className={styles.link} to="/category/Health and Personal Development">Health and Personal Development</Menu.Item>
+                        <Menu.Item component={Link} className={styles.link} to="/category/Lifestyle">Lifestyle</Menu.Item>
+                        <Menu.Item component={Link} className={styles.link} to="/category/Reference Books">Reference Books</Menu.Item>
+                        <Menu.Item component={Link} className={styles.link} to="/category/all">See All Books</Menu.Item>
                     </Menu>
 
 
@@ -73,13 +73,14 @@ const CategoryBar = () => {
                             <button className={styles.categoryItems}>Children's Books</button>
                         }
                     >
-                        <Menu.Label>Fiction Books</Menu.Label>
-                        <Menu.Item >Settings</Menu.Item>
-                        <Menu.Item >Messages</Menu.Item>
-                        <Menu.Item >Gallery</Menu.Item>
-                        <Menu.Item>Search</Menu.Item>
-                        <Menu.Item >Transfer my data</Menu.Item>
-                        <Menu.Item >Delete my account</Menu.Item>
+                        <Menu.Label>Children's Books</Menu.Label>
+                        <Menu.Item component={Link} className={styles.link} to="/category/Children's Books" >All Children's Books</Menu.Item>
+                        <Menu.Item component={Link} className={styles.link} to="/category/Children's Fiction and True Stories">Children's Fiction and True Stories</Menu.Item>
+                        <Menu.Item component={Link} className={styles.link} to="/category/Children's Non-Fiction">Children's Non-Fiction</Menu.Item>
+                        <Menu.Item component={Link} className={styles.link} to="/category/Activity">Activity</Menu.Item>
+                        <Menu.Item component={Link} className={styles.link} to="/category/Children's Reference Books">Children's Reference Books</Menu.Item>
+                        <Menu.Item component={Link} className={styles.link} to="/category/Children's Education and Learning">Children's Education and Learning</Menu.Item>
+                        <Menu.Item component={Link} className={styles.link} to="/category/all">See All Books</Menu.Item>
                     </Menu>
 
 
