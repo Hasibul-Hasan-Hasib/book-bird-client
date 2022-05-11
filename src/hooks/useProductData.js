@@ -1,24 +1,25 @@
 import { useEffect, useState } from "react"
+import axios from 'axios'
 
 
-const useData = () => {
+const useProductData = () => {
     const [books, setBooks] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const url = 'http://localhost:3100/products';
+    const fetchData = async () => {
+        await axios.get(url)
+            .then(res => {
+                setBooks(res.data);
+                setIsLoading(false);
+            })
+    }
 
     useEffect(() => {
         setIsLoading(true);
-        fetch('https://book-birds.herokuapp.com/products')
-            .then(res => res.json())
-            .then(data => {
-                setBooks(data);
-                setIsLoading(false);
-            })
+        fetchData();
     }, [])
+
     return { books, isLoading };
 }
 
-
-
-
-
-export default useData;
+export default useProductData;

@@ -1,21 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import NavigationBar from '../../shared/NavigationBar/NavigationBar';
 import BestSelling from '../BestSelling/BestSelling';
 import Banner from '../Banner/Banner';
 import HomeBrowse from '../HomeBrowse/HomeBrowse';
 import HomeHero from '../HomeHero/HomeHero';
-import useProductData from '../../../hooks/useProductData';
 import Blogs from '../Blogs/Blogs';
 import Footer from '../../shared/Footer/Footer'
 import Testimonial from '../Testimonial/Testimonial';
 import TopSearch from '../../shared/TopSearch/TopSearch';
-import { Loader } from '@mantine/core';
+import useProductData from '../../../hooks/useProductData';
 
 
 const Home = () => {
 
     const { books, isLoading } = useProductData();
-    console.log(books);
+    const [cartItem,setCartItem] = useState([]);
+
 
     const fictionData = [
         {
@@ -57,27 +57,17 @@ const Home = () => {
             <body>
                 <NavigationBar />
                 <TopSearch />
-                {
-                    isLoading ?
-                        <div style={{ height: "50vh", display: "flex", justifyContent: "center", alignItems: "center" }}>
-                            <Loader></Loader>
-                            <h2 style={{ marginLeft: "0.5rem" }}>Loading ...</h2>
-                        </div>
-                        :
-                        <>
-                            <Banner />
-                            <BestSelling title={fiction} books={books} isLoading={isLoading} />
-                            <HomeBrowse title={fiction} data={fictionData} />
-                            <HomeHero />
-                            <HomeBrowse title={bookBird} data={fictionData} />
-                            <BestSelling title={nonFiction} books={books} isLoading={isLoading} />
-                            <HomeBrowse title={nonFiction} data={fictionData} />
-                            <Blogs />
-                            <BestSelling title={children} books={books} isLoading={isLoading} />
-                            <HomeBrowse title={children} data={fictionData} />
-                            <Testimonial />
-                        </>
-                }
+                <Banner />
+                <BestSelling title={fiction} books={books} isLoading={isLoading} />
+                <HomeBrowse title={fiction} data={fictionData} />
+                <HomeHero />
+                <HomeBrowse title={bookBird} data={fictionData} />
+                <BestSelling title={nonFiction} books={books} isLoading={isLoading} />
+                <HomeBrowse title={nonFiction} data={fictionData} />
+                <Blogs />
+                <BestSelling title={children} books={books} isLoading={isLoading} />
+                <HomeBrowse title={children} data={fictionData} />
+                <Testimonial />
                 <Footer />
             </body>
         </>

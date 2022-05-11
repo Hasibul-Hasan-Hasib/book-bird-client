@@ -12,21 +12,23 @@
 
 
 .info{
-    margin: 0;
+    text-align: right;
     color: rgb(2, 169, 169);
     margin: 0.5rem 0;
+    margin-left: 1rem;
 }
 
 
 .infoContainer{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: top;
 }
 
 .bookImg{
-    width: 90%;
-    border-radius: 15px;
+    width:  8rem;
+    height: 200px;
+    border-radius: 10px;
 }
 
 

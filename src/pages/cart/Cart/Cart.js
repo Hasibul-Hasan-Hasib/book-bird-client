@@ -5,16 +5,19 @@ import NavigationBar from '../../shared/NavigationBar/NavigationBar';
 import TopSearch from '../../shared/TopSearch/TopSearch'
 import Footer from '../../shared/Footer/Footer';
 import { Link } from 'react-router-dom';
-import { Check, Trash} from 'tabler-icons-react';
-// import useProductData from '../../../hooks/useProductData';
+import { Check, Trash } from 'tabler-icons-react';
+import { CartState } from '../../../context/Context';
 
 
 
 const Cart = () => {
 
-    // const items = useProductData();
-    const [quantity,setQuantity] = useState(1);
-    const price = (3.49 * quantity?quantity:0).toFixed(2);
+
+    const {
+        state: { cart },
+        dispatch
+    } = CartState();
+
 
 
     return (
@@ -31,40 +34,49 @@ const Cart = () => {
                         <Grid.Col span={1}></Grid.Col>
                     </Grid>
                     <hr className={styles.hidden} />
-                    <Grid columns={24} sx={{ marginTop: '0.5rem' }}>
-                        <Grid.Col span={8} sm={5} >
-                            <img className={styles.bookImg} src="https://productimages.worldofbooks.com/1472154665_thumbnail.jpg" alt="book pic" />
-                        </Grid.Col>
-                        <Grid.Col span={16} sm={19}>
-                            <Grid columns={19}>
-                                <Grid.Col span={19} sm={9} >
-                                    <h3 className={styles.bookInfo}>Where the Crawdads Sing By Delia Owens</h3>
-                                    <h3 className={styles.bookInfo}>Sku <span className={styles.colorTitle}>GURo15544665</span></h3>
-                                    <h3 className={styles.bookInfo}>Condition <span className={styles.colorTitle}>Very Good</span></h3>
-                                    <h3 className={styles.bookInfo}>Category <span className={styles.colorTitle}>Fiction Books</span></h3>
+                    {
+                        cart.map(item =>
+                            <Grid columns={24} sx={{ marginTop: '0.5rem' }}>
+                                <Grid.Col span={8} sm={5} >
+                                    <img className={styles.bookImg} src={item.book.Image} alt="book pic" />
                                 </Grid.Col>
-                                <Grid.Col span={19} sm={3} >
-                                    <h3 className={styles.infoElements}>£{price}</h3>
-                                </Grid.Col>
-                                <Grid.Col span={19} sm={3} >
-                                    <NumberInput
-                                        defaultValue={18}
-                                        placeholder="Your age"
-                                        onChange={setQuantity}
-                                        className={styles.numberInput}
-                                        min={0}
-                                    />
-                                </Grid.Col>
-                                <Grid.Col sm={3} >
-                                    <h3 className={styles.infoElements}>$17.45</h3>
-                                </Grid.Col>
-                                <Grid.Col sm={2} sx={{display:'flex'}}>
-                                    <Button variant='subtle' leftIcon={<Check/>}>Save</Button>
-                                    <Button variant='subtle' color="red" leftIcon={<Trash/>}>Remove</Button>
+                                <Grid.Col span={16} sm={19}>
+                                    <Grid columns={19}>
+                                        <Grid.Col span={19} sm={9} >
+                                            <h3 className={styles.bookInfo}>{item.book.Title}</h3>
+                                            <h3 className={styles.bookInfo}>Sku <span className={styles.colorTitle}>{item.book.Sku}</span></h3>
+                                            <h3 className={styles.bookInfo}>Condition <span className={styles.colorTitle}>{item.book.Condition}</span></h3>
+                                            <h3 className={styles.bookInfo}>Category <span className={styles.colorTitle}>{item.book.Category2}</span></h3>
+                                        </Grid.Col>
+                                        <Grid.Col span={19} sm={3} >
+                                            <h3 className={styles.infoElements}>£ {item.book.Price.slice(1)}</h3>
+                                        </Grid.Col>
+                                        <Grid.Col span={19} sm={3} >
+                                            <NumberInput
+                                                defaultValue={1}
+                                                placeholder="Your age"
+                                                onChange={1}
+                                                className={styles.numberInput}
+                                                min={0}
+                                            />
+                                        </Grid.Col>
+                                        <Grid.Col sm={3} >
+                                            <h3 className={styles.infoElements}>$17.45</h3>
+                                        </Grid.Col>
+                                        <Grid.Col sm={2} sx={{ display: 'flex' }}>
+                                            <Button variant='subtle' leftIcon={<Check />}>Save</Button>
+                                            <Button variant='subtle' color="red" leftIcon={<Trash />} onClick={() => {
+                                                dispatch({
+                                                    type: "REMOVE_FROM_CART",
+                                                    payload: item,
+                                                })
+                                            }}>Remove</Button>
+                                        </Grid.Col>
+                                    </Grid>
                                 </Grid.Col>
                             </Grid>
-                        </Grid.Col>
-                    </Grid>
+                        )
+                    }
                     <Grid justify="space-between" sx={{ margin: '0.5rem 0' }}>
                         <Grid.Col span={6} sx={{ textAlign: 'left' }}><Button variant='subtle' sx={{ padding: 0 }}>Empty Cart</Button></Grid.Col>
                         <Grid.Col span={6} sx={{ textAlign: 'right' }}><Link to="/checkout"><Button>Checkout Now</Button></Link></Grid.Col>

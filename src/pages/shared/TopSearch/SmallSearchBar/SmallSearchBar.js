@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom'
 const SmallSearchBar = () => {
 
     const [opened, setOpened] = useState(false);
-    const title = opened ? 'Close navigation' : 'Open navigation';
 
 
     return (
@@ -20,7 +19,6 @@ const SmallSearchBar = () => {
                             <Burger
                                 opened={opened}
                                 onClick={() => setOpened((o) => !o)}
-                                title={title}
                             />
                         }
                     >

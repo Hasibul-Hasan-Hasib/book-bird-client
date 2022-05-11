@@ -28,7 +28,7 @@ const BestSellingFiction = (props) => {
                     {
                         isLoading === false ? books.slice(0, 6).map(book =>
                             <Grid.Col span={6} xs={4} sm={3} lg={2} className={styles.card}>
-                                <Card book={book} />
+                                <Card key={book.Sku} book={book} />
                             </Grid.Col>):<Loader sx={{margin:"auto"}}></Loader>
                     }
                 </Grid>

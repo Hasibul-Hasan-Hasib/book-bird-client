@@ -12,14 +12,14 @@ const Products = (props) => {
 
     const itemPerPage = 24;
     const pageVisited = (activePage-1) * itemPerPage;
-    console.log(items);
+
 
     return (
         <>
             <Grid className={styles.cardContainer}>
                 {
                     items.slice(pageVisited, pageVisited + itemPerPage).map(item => <Grid.Col span={6} xs={4} lg={3} className={styles.card}>
-                        <Card book={item} />
+                        <Card key={item.Sku} book={item} />
                     </Grid.Col>)
                 }
             </Grid>

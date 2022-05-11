@@ -1,25 +1,24 @@
 import React from 'react';
 import styles from './Details.module.css'
-import axios from 'axios';
 import { Accordion, Button, Container, Grid } from '@mantine/core'
 import { Heart } from 'tabler-icons-react';
+import { CartState } from '../../../context/Context';
 
 
 
 
 const Details = (props) => {
-    console.log(props.book);
-    const { Sku, Title, Author, Image, Publisher, Condition,Binding_type, Price, Summary_Description, Writer_Description, ISBN_13, ISBN_10, Year_published, Number_of_pages, Prizes, Cover_note, Note } = props.book;
 
 
+    const { Sku, Title, Author, Image, Publisher, Condition, Binding_type, Price, Summary_Description, Writer_Description, ISBN_13, ISBN_10, Year_published, Number_of_pages, Prizes, Cover_note, Note } = props.book;
 
-    const handleAddToCart = (productID) => {
-        // const url = `http://localhost:3100/cart/add/${productID}`
-        // const cartData = {
 
-        // }
-        // axios.post(url,)
-    }
+    const {
+        state: { cart },
+        dispatch
+    } = CartState();
+
+    console.log(cart);
 
 
     return (
@@ -37,7 +36,27 @@ const Details = (props) => {
                         <h1 className={styles.price}>£ {Price?.slice(1)} </h1>
                         <Button sx={{ marginBottom: '1rem' }} variant='outline'>{Condition}</Button>
                         <div className={styles.btnContainer}>
-                            <Button className={styles.addCartBtn} onClick={handleAddToCart(Sku)}>Add to Cart</Button>
+                            {
+                                cart.some(p => p.book.Sku === Sku) ?
+                                    (
+                                        <Button onClick={() => {
+                                            dispatch({
+                                                type: "REMOVE_FROM_CART",
+                                                payload: props,
+                                            })
+                                        }}
+                                            color="red" className={styles.addCartBtn} >Remove From Cart</Button>
+                                    )
+                                    :
+                                    (
+                                        <Button onClick={() => {
+                                            dispatch({
+                                                type: "ADD_TO_CART",
+                                                payload: props,
+                                            })
+                                        }} className={styles.addCartBtn} >Add to Cart</Button>
+                                    )
+                            }
                             <div className={styles.iconBtnContainer}>
                                 <Heart className={styles.iconBtn} size={30} />
                             </div>

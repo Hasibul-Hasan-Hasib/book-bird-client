@@ -7,10 +7,7 @@ import SideCart from '../SideCart/SideCart';
 
 const TopSearchBar = () => {
 
-    // Cart States
-
     const [opened, setOpened] = useState(false);
-
 
 
     return (
@@ -27,7 +24,7 @@ const TopSearchBar = () => {
                         <Grid.Col span={4} >
                             <Select
                                 defaultValue="All"
-                                defaultLabel="All"
+                                defaultlabel="All"
                                 data={[
                                     { value: 'All', label: 'All' },
                                     { value: 'Books', label: 'Books' },

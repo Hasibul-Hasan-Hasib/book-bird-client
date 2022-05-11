@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import styles from './Shop.module.css'
 import { Button, Container, Grid, Group, Loader, NumberInput, Select, Text } from '@mantine/core'
-// import Filter from '../Filter/Filter';
 import Products from '../Products/Products';
 import TopSearch from '../../shared/TopSearch/TopSearch';
 import Footer from '../../shared/Footer/Footer';
 import { useParams } from 'react-router-dom';
 import useProductData from '../../../hooks/useProductData';
+
 
 const Shop = () => {
 
@@ -15,25 +15,20 @@ const Shop = () => {
 
     const { categoryName } = useParams();
 
+    //tried to use query string
 
     // const query = new URLSearchParams(search);
     // const con = query.get('con');
     // const binding = query.get('binding')
-    // console.log(con);
-    // console.log(binding);
 
 
 
-    // const filteredData = categoryFilter.filter(item => con !== null ? con === "Good" ? item.Condition === "Good" : con === 'Well Read' ? item.Condition === "Well Read" : item.Condition === "Very Good" : item)
-    // console.log(filteredData);
 
     const [category, setCategory] = useState(categoryName);
     const [condition, setCondition] = useState('');
     const [binding, setBinding] = useState('')
     const [low, setLow] = useState(10)
     const [high, setHigh] = useState(100)
-
-    // const [priceRange, setPriceRange] = useState([10,100]);
 
 
 
@@ -43,13 +38,6 @@ const Shop = () => {
         const conditionFilter = categoryFilter.filter(item => condition ? item.Condition === condition : item)
         const bindingFilter = conditionFilter.filter(item => binding ? item.Binding_type === binding : item)
         const priceFilter = bindingFilter.filter(item => high && low ? low <= parseFloat(item.Price.slice(1, 10)) && parseFloat(item.Price.slice(1, 10)) <= high : item)
-        // const priceFilter = bindingFilter.filter(item=> {
-        //     const price = parseFloat(item.Price.slice(1,10))
-        //     if(priceRange[0] < price < priceRange[1]){
-        //         console.log(item.Price);
-        //     }
-        // })
-        // console.log(priceFilter);
         return priceFilter;
     }
 
@@ -165,26 +153,11 @@ const Shop = () => {
                                 max={100}
                                 min={10}
                             />
-
-                            {/* <RangeSlider 
-                            value={priceRange}
-                            marks={[
-                                { value: 10, label: '10' },
-                                { value: 30, label: '30' },
-                                { value: 50, label: '50' },
-                                { value: 70, label: '70' },
-                                { value: 90, label: '90' },
-                            ]} 
-                            sx={{width:"100%"}}
-                            onChange={setPriceRange}
-                            /> */}
-
                         </Group>
                         <br />
                         <Group style={{ display: 'flex', justifyContent: 'space-around' }}>
                             <Button color="red" variant='outline' sx={{ width: "60%" }} onClick={reset}>Reset</Button>
                         </Group>
-                        {/* <Filter /> */}
                     </Grid.Col>
                     <Grid.Col span={8}>
                         {
@@ -194,7 +167,7 @@ const Shop = () => {
                                     <h2 style={{ marginLeft: "0.5rem" }}>Loading ...</h2>
                                 </div>
                                 :
-                                <Products books={filter() ? filter() : categoryFilter} />
+                                <Products key={books.Sku} books={filter() ? filter() : categoryFilter} />
                         }
                     </Grid.Col>
                 </Grid>

@@ -12,19 +12,17 @@ import { useParams } from 'react-router-dom'
 
 const BookDetails = () => {
 
-    const books = useProductData();
-    console.log(books);
+    const { books } = useProductData();
     const { id } = useParams();
 
     const book = books.find(item => item.Sku === id)
-    console.log(book);
 
 
     return (
         <>
             <NavigationBar />
             <TopSearch />
-            <Details book={book ? book : []} />
+            <Details key={book ? book.Sku : ""} book={book ? book : []} />
             <Suggestion books={books} />
             <Footer />
         </>
