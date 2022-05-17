@@ -6,7 +6,7 @@ import TopSearchBar from './TopSearchBar/TopSearchBar';
 
 const TopSearch = () => {
     return (
-        <>
+        <div >
             <div className={styles.searchBar1}>
                 <TopSearchBar  />
                 <CategoryBar />
@@ -14,7 +14,7 @@ const TopSearch = () => {
             <div className={styles.searchBar2}>
                 <SmallSearchBar />
             </div>
-        </>
+        </div>
     );
 };
 

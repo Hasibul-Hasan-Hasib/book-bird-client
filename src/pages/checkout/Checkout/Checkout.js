@@ -14,6 +14,7 @@ const Checkout = () => {
     const [active, setActive] = useState(0);
     const nextStep = () => setActive((current) => (current < 3 ? current + 1 : current));
     const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
+    
 
 
     return (
@@ -36,14 +37,18 @@ const Checkout = () => {
                         </Stepper.Step>
                         <Stepper.Completed>
                             <div>
-                                <h1 style={{textAlign:'center'}}>Congratulations your purchase is <span style={{color:"#2196f3"}}>Successful</span></h1>
+                                <h1 style={{ textAlign: 'center' }}>Congratulations your purchase is <span style={{ color: "#2196f3" }}>Successful</span></h1>
                             </div>
                         </Stepper.Completed>
                     </Stepper>
                     <Group position="center" mt="xl">
-                        <Button variant="default" onClick={prevStep}>Back</Button>
+                        {
+                            active === 0 ?
+                                <Button variant="default" onClick={prevStep} disabled>Back</Button> :
+                                <Button variant="default" onClick={prevStep}>Back</Button>
+                        }
                         <Button onClick={nextStep}>Continue Process</Button>
-                        <Link to="/home"><Button variant='default'>Go Home</Button></Link>
+                        <Button component={Link} to='/cart' variant='default'>Go to Cart</Button>
                     </Group>
                 </div>
             </Container>

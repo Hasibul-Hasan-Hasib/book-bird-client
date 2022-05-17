@@ -38,7 +38,7 @@ const SideCart = () => {
                 </div>
             </div>
             <hr />
-            <ScrollArea style={{ height: 550 }}>
+            <ScrollArea style={{ height: 550 }} type="scroll" scrollbarSize={2}>
                 {
                     cart.map(item => <>
                         <Grid sx={{ marginBottom: '1rem' }}>

@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import NavigationBar from '../../shared/NavigationBar/NavigationBar';
 import BestSelling from '../BestSelling/BestSelling';
 import Banner from '../Banner/Banner';
 import HomeBrowse from '../HomeBrowse/HomeBrowse';
 import HomeHero from '../HomeHero/HomeHero';
 import Blogs from '../Blogs/Blogs';
-import Footer from '../../shared/Footer/Footer'
+import Footer from '../../shared/Footer/Footer';
 import Testimonial from '../Testimonial/Testimonial';
 import TopSearch from '../../shared/TopSearch/TopSearch';
 import useProductData from '../../../hooks/useProductData';
@@ -14,8 +14,6 @@ import useProductData from '../../../hooks/useProductData';
 const Home = () => {
 
     const { books, isLoading } = useProductData();
-    const [cartItem,setCartItem] = useState([]);
-
 
     const fictionData = [
         {
@@ -44,10 +42,10 @@ const Home = () => {
         },
     ];
 
-    const fiction = "Fiction"
-    const nonFiction = "Non-Fiction"
+    const fiction = "Fiction Books"
+    const nonFiction = "Non-Fiction Books"
     const bookBird = "Book-Bird"
-    const children = "Children's"
+    const children = "Children's Books"
 
     return (
         <>

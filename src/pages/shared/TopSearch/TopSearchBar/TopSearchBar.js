@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
 import styles from './TopSearchBar.module.css';
-import { Button, Container, Grid, Group, Drawer, Select, TextInput } from '@mantine/core';
+import { Button, Container, Grid, Drawer, Select, TextInput, Badge } from '@mantine/core';
 import logo1 from '../../../../assets/image/logo/logo1.png';
 import { ShoppingCart } from 'tabler-icons-react';
 import SideCart from '../SideCart/SideCart';
+import { CartState } from '../../../../context/Context';
 
 const TopSearchBar = () => {
+
+    const {
+        state: { cart }
+    } = CartState();
+
 
     const [opened, setOpened] = useState(false);
 
@@ -48,6 +54,14 @@ const TopSearchBar = () => {
                     {/* Cart Btn */}
 
                     <Grid.Col span={1} className={styles.cartContainer}>
+                        
+                        {
+                            cart.length > 0 ? (<Badge
+                                style={{ zIndex: '1', marginBottom: '-0.5rem', marginLeft: '2.5rem' }}
+                                variant="gradient" gradient={{ from: 'orange', to: 'red' }}
+                            >{cart.length}</Badge>) : ("")
+                        }
+
                         <Drawer
                             opened={opened}
                             onClose={() => setOpened(false)}
@@ -57,7 +71,8 @@ const TopSearchBar = () => {
                         >
                             <SideCart />
                         </Drawer>
-                        <Group position="right">
+
+                        <div position="right">
                             <button
                                 className={styles.cartBtn}
                                 onClick={() => setOpened(true)}
@@ -65,9 +80,9 @@ const TopSearchBar = () => {
                                 <ShoppingCart size={28} />
                                 <h6 className={styles.cartText}>Cart</h6>
                             </button>
-                        </Group>
+                        </div>
+
                     </Grid.Col>
-                    
                 </Grid>
             </Container>
             <hr />
