@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Items.module.css'
 import { Grid, ScrollArea } from '@mantine/core';
-import { CartState } from '../../../context/Context';
+import { CartState } from '../../../contexts/CartContext';
 
 
 

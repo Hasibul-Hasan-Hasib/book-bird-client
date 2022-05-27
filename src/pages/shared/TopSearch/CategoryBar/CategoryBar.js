@@ -138,6 +138,7 @@ const CategoryBar = () => {
 
                     <Menu
                         trigger="hover"
+                        placement="end"
                         control={
                             <button className={styles.categoryItems}>Video Games</button>
                         }

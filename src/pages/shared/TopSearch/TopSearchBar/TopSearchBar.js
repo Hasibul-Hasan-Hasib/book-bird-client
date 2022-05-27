@@ -4,7 +4,7 @@ import { Button, Container, Grid, Drawer, Select, TextInput, Badge } from '@mant
 import logo1 from '../../../../assets/image/logo/logo1.png';
 import { ShoppingCart } from 'tabler-icons-react';
 import SideCart from '../SideCart/SideCart';
-import { CartState } from '../../../../context/Context';
+import { CartState } from '../../../../contexts/CartContext';
 
 const TopSearchBar = () => {
 

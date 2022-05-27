@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './SmallSearchBar.module.css'
-import { Search, ShoppingCart, Login } from 'tabler-icons-react';
+import { Search, ShoppingCart, User } from 'tabler-icons-react';
 import logo from '../../../../assets/image/logo/logo1.png'
 import { Burger, Grid, Menu } from '@mantine/core';
 import { Link } from 'react-router-dom'
@@ -34,7 +34,7 @@ const SmallSearchBar = () => {
                     <img className={styles.logo} src={logo} alt="" />
                 </Grid.Col>
                 <Grid.Col span={2} ><Link to="/cart"><ShoppingCart size={28} color="black"/></Link></Grid.Col>
-                <Grid.Col span={2} ><Login size={28} /></Grid.Col>
+                <Grid.Col span={2} ><User size={28} /></Grid.Col>
             </Grid>
         </>
     );

@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Details.module.css'
 import { Accordion, Button, Container, Grid } from '@mantine/core'
 import { Heart } from 'tabler-icons-react';
-import { CartState } from '../../../context/Context';
+import { CartState } from '../../../contexts/CartContext';
 
 
 
@@ -18,7 +18,6 @@ const Details = (props) => {
         dispatch
     } = CartState();
 
-    console.log(cart);
 
 
     return (

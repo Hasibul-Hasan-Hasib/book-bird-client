@@ -10,7 +10,7 @@ const Products = (props) => {
     const items = props.books;
     const [activePage, setPage] = useState(1);
 
-    const itemPerPage = 24;
+    const itemPerPage = 12;
     const pageVisited = (activePage-1) * itemPerPage;
 
 

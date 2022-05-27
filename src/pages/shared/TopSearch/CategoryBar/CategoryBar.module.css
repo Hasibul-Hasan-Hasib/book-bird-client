@@ -25,4 +25,5 @@
 
 .underLine{
     border-top: 3px solid darkcyan;
+    margin-bottom: 0;
 }

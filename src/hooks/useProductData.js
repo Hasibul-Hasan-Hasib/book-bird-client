@@ -5,7 +5,7 @@ import axios from 'axios'
 const useProductData = () => {
     const [books, setBooks] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
-    const url = 'https://book-birds.herokuapp.com/products';
+    const url = `${process.env.REACT_APP_URL}products`;
     const fetchData = async () => {
         await axios.get(url)
             .then(res => {

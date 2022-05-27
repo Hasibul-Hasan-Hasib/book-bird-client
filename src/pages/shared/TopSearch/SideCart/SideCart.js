@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './SideCar.module.css'
 import { Button, Grid, ScrollArea } from "@mantine/core"
 import { Link } from 'react-router-dom';
-import { CartState } from '../../../../context/Context';
+import { CartState } from '../../../../contexts/CartContext';
 
 
 

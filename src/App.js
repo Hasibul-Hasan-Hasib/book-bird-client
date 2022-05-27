@@ -5,24 +5,33 @@ import BookDetails from './pages/bookDetails/BookDetails/BookDetails'
 import Cart from './pages/cart/Cart/Cart';
 import Checkout from './pages/checkout/Checkout/Checkout';
 import Shop from './pages/shop/Shop/Shop'
-import Context from './context/Context';
+import Login from './pages/login/Login'
+import AuthContext from './contexts/AuthContext';
+import CartContext from './contexts/CartContext';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 function App() {
   return (
     <>
-      <Context>
-        <Router>
-          <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/home" element={<Home />}></Route>
-            <Route path='/books/:id' element={<BookDetails />} />
-            <Route path='/cart' element={<Cart />}></Route>
-            <Route path='/checkout' element={<Checkout />}></Route>
-            <Route path="/category/:categoryName" element={<Shop />}></Route>
-            <Route path="*" element={<NotFound />}></Route>
-          </Routes>
-        </Router>
-      </Context>
+      <AuthContext>
+        <CartContext>
+          <Router>
+            <Routes>
+              <Route path="/" element={<Home />}></Route>
+              <Route path="/home" element={<Home />}></Route>
+              <Route path='/books/:id' element={<BookDetails />} />
+              <Route path='/cart' element={<Cart />}></Route>
+              <Route path='/checkout'
+                element={<PrivateRoute>
+                  <Checkout />
+                </PrivateRoute>} />
+              <Route path='/login' element={<Login />}></Route>
+              <Route path="/category/:categoryName" element={<Shop />}></Route>
+              <Route path="*" element={<NotFound />}></Route>
+            </Routes>
+          </Router>
+        </CartContext>
+      </AuthContext>
     </>
   );
 }

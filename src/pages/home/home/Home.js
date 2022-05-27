@@ -1,5 +1,4 @@
 import React from 'react';
-import NavigationBar from '../../shared/NavigationBar/NavigationBar';
 import BestSelling from '../BestSelling/BestSelling';
 import Banner from '../Banner/Banner';
 import HomeBrowse from '../HomeBrowse/HomeBrowse';
@@ -53,7 +52,6 @@ const Home = () => {
                 <title>This is home</title>
             </head>
             <body>
-                <NavigationBar />
                 <TopSearch />
                 <Banner />
                 <BestSelling title={fiction} books={books} isLoading={isLoading} />

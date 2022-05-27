@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Card.module.css';
 import { Button } from '@mantine/core';
 import { Link } from 'react-router-dom';
-import { CartState } from '../../../context/Context';
+import { CartState } from '../../../contexts/CartContext';
 
 
 const Card = (props) => {

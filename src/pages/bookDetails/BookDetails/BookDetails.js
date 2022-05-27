@@ -1,6 +1,4 @@
 import React from 'react';
-import styles from './BookDetails.module.css';
-import NavigationBar from '../../shared/NavigationBar/NavigationBar'
 import TopSearch from '../../shared/TopSearch/TopSearch';
 import Footer from '../../shared/Footer/Footer';
 import Details from '../Details/Details';
@@ -16,14 +14,13 @@ const BookDetails = () => {
     const { id } = useParams();
 
     const book = books.find(item => item.Sku === id)
-
+    const suggestedBooks = books.filter(item => item.Category1 === book?.Category1 || item.Category2 === book?.Category2)
 
     return (
         <>
-            <NavigationBar />
             <TopSearch />
             <Details key={book ? book.Sku : ""} book={book ? book : []} />
-            <Suggestion books={books} />
+            <Suggestion books={suggestedBooks?suggestedBooks:[]} />
             <Footer />
         </>
     );
