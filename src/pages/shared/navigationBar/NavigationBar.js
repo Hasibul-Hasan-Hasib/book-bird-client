@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './Navigation.module.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Heart, Login, Logout, User } from 'tabler-icons-react'
-import { Menu } from '@mantine/core';
+import { Menu, Text } from '@mantine/core';
 import { Auth } from '../../../contexts/AuthContext';
 
 
@@ -35,9 +35,9 @@ const NavigationBar = () => {
                         sx={{ textDecoration: 'none' }}
                         control={
                             user.email ?
-                                <div className={styles.links}><button className={styles.linkButton}>Hi, {user.displayName} <span style={{ margin: '0 0.3rem 0 0' }}></span> | </button></div>
+                                <Text className={styles.links} style={{border:'none'}}>Hi, {user.displayName}</Text>
                                 :
-                                <div className={styles.links}><button className={styles.linkButton}>My Account <span style={{ margin: '0 0.3rem 0 0' }}></span> | </button></div>
+                                <Text className={styles.links}>My Account</Text>
                         }
                     >
                         <Menu.Item icon={<User />} onClick={e => navigate('/profile')}>
@@ -54,8 +54,8 @@ const NavigationBar = () => {
                                 </Menu.Item>
                         }
                     </Menu>
-                    <Link className={styles.links} to="/about"><button className={styles.linkButton}>Wishlist <Heart size={16} style={{ margin: '0 0.3rem 0 0.1rem' }} /> |</button></Link>
-                    <Link className={styles.links} to="/services"><button className={styles.linkButton}>FAQ</button></Link>
+                    <Text className={styles.links} onClick={e => navigate('/wishlist')}>Wishlist <Heart size={16} /></Text>
+                    <Text className={styles.links} onClick={e => navigate('/faq')}>FAQ</Text>
                 </div>
             </nav>
         </div>

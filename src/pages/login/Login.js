@@ -57,13 +57,24 @@ export default function Login() {
         },
     });
 
-    const { auth, signInUsingPopup, setError, setUser, createUserWithEmailAndPassword, signInWithEmailAndPassword } = Auth();
+    const { auth, signInUsingGooglePopup, signInUsingFacebookPopup, setError, setUser, createUserWithEmailAndPassword, signInWithEmailAndPassword } = Auth();
     const navigate = useNavigate();
     const location = useLocation()
     const redirect_url = location.state?.from || '/home'
 
     const handleGoogleSignIn = () => {
-        signInUsingPopup()
+        signInUsingGooglePopup()
+            .then(result => {
+                setUser(result.user)
+                navigate(redirect_url)
+            })
+            .catch(error => {
+                setError(error.message)
+            })
+    }
+
+    const handleFacebookSignIn = () => {
+        signInUsingFacebookPopup()
             .then(result => {
                 setUser(result.user)
                 navigate(redirect_url)
@@ -120,7 +131,9 @@ export default function Login() {
                             <Button variant='outline' radius="xl"
                                 onClick={handleGoogleSignIn}
                             >Google</Button>
-                            <Button variant='outline' radius="xl">Twitter</Button>
+                            <Button variant='outline' radius="xl"
+                                onClick={handleFacebookSignIn}
+                            >Facebook</Button>
                         </Group>
 
                         <Divider label="Or continue with email" labelPosition="center" my="lg" />

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Card.module.css';
 import { Button } from '@mantine/core';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { CartState } from '../../../contexts/CartContext';
 
 
@@ -13,18 +13,16 @@ const Card = (props) => {
         dispatch
     } = CartState();
 
+    const navigate = useNavigate();
+
 
     return (
         <>
-            <div className={styles.imgContainer}>
-                <Link to={`/books/${Sku}`}>
-                    <img src={Image} className={styles.cardImg} alt="" />
-                </Link>
+            <div className={styles.imgContainer} onClick={e => navigate(`/books/${Sku}`)}>
+                <img src={Image} className={styles.cardImg} alt="" />
             </div>
             <div className={styles.textContainer}>
-                <Link to={`/books/${Sku}`} className={styles.link}>
-                    <h6 className={styles.title}>{Title}</h6>
-                </Link>
+                <h6 onClick={e => navigate(`/books/${Sku}`)} className={styles.title}>{Title}</h6>
                 <h6 className={styles.condition}>{Condition}</h6>
                 <h2 className={styles.price}>£ {Price.slice(1)}</h2>
             </div>
@@ -47,7 +45,7 @@ const Card = (props) => {
                                     type: "ADD_TO_CART",
                                     payload: props,
                                 })
-                            }} className={styles.addCartBtn} >Add to Cart</Button>
+                            }} >Add to Cart</Button>
                         )
                 }
             </div>

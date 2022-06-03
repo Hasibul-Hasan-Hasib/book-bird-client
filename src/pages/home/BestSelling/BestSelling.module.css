@@ -1,38 +1,16 @@
-.cardContainer {
-  height: 30rem !important;
-  overflow: hidden;
+
+.sliderContainer{
+  margin: 1.5rem 0 !important;
 }
 
-.link {
-  text-decoration: none;
-}
 
-.titleContainer {
+.titleContainer{
   display: flex;
-  color: black;
   justify-content: space-between;
-  padding: 0 1rem;
-  margin-top: 1rem;
-}
-
-.viewMoreBtn {
-  margin: 0;
-  font-weight: 500;
-  display: flex;
   align-items: center;
-  justify-content: right;
 }
 
 .titleContainer:hover {
   color: #2196f3;
 }
 
-.title {
-  font-size: 1.7rem;
-  font-weight: 600;
-  margin: 0;
-}
-
-.card {
-  margin: 1rem 0 !important ;
-}

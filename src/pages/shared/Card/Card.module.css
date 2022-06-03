@@ -1,4 +1,4 @@
-:root{
+:root:hover{
     --primary-color: #2196f3;
 }
 
@@ -6,6 +6,10 @@
 
 .imgContainer{
     text-align: center;
+}
+
+.cardImg:hover{
+    filter: grayscale(80%);
 }
 
 .textContainer{
@@ -17,11 +21,6 @@
     width:  10rem;
     height: 250px;
     border-radius: 10px;
-}
-
-.link{
-    text-decoration: none;
-    color: black;
 }
 
 
@@ -62,10 +61,7 @@
 }
 
 .addCartBtnContainer{
-    text-align: center !important;
+    text-align: center;
 }
 
-.addCartBtn{
-    box-shadow: none !important;
-}
 

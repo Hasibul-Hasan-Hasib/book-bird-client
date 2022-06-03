@@ -16,6 +16,7 @@ const Cart = () => {
         dispatch
     } = CartState();
 
+
     const [total, setTotal] = useState();
 
     useEffect(() => {
@@ -26,6 +27,11 @@ const Cart = () => {
         <>
             <TopSearch />
             <Container size='lg'>
+
+
+                {/* Cart Product Section */}
+
+
                 <Grid columns={12} justify="space-around" >
                     <Grid.Col span={8} sx={{ borderRadius: '10px', margin: '1rem 0', padding: '0.5rem 1rem' }}>
                         <ScrollArea scrollbarSize={2} style={{ height: 450}}>
@@ -75,23 +81,37 @@ const Cart = () => {
                             }
                         </ScrollArea>
                     </Grid.Col>
+
+
+
+
+                    {/* cart Price Section */}
+
+
+
                     <Grid.Col span={4} style={{ backgroundColor:'lightcyan', borderRadius: '10px', margin: '1rem 0', height: '20%',padding:'2.5% 2.5% 3%'}}>
                         <Text size="xl"
                             weight={700} sx={{ marginBottom: '1rem' }}>Cart Total</Text>
+
                         <Group sx={{ justifyContent: 'space-between' }}>
                             <Text size="lg">Subtotal</Text>
                             <Text size="lg">£ {total}</Text>
                         </Group>
+
                         <hr />
+
                         <Group sx={{ justifyContent: 'space-between' }}>
                             <Text size="lg">Shipping</Text>
                             <Text size="lg">{cart.length > 0 ? "£ 5.00" : "£ 0.00"}</Text>
                         </Group>
+
                         <hr />
+
                         <Group sx={{ justifyContent: 'space-between' }}>
                             <Text size="lg">Total</Text>
                             <Text size="lg">{cart.length > 0 ? `£ ${(Number(total) + 5).toFixed(2)}` : "£ 0.00"}</Text>
                         </Group>
+
                         <Group sx={{display:'flex',justifyContent:"center",marginTop:'1rem'}}>
                             {
                                 cart.length===0?
@@ -99,8 +119,13 @@ const Cart = () => {
                                 :
                                 <Button component={Link} to='/checkout'>CheckOut</Button>
                             }
-                            <Button>EmptyCart</Button>
+                            <Button  onClick={() => {
+                                            dispatch({
+                                                type: "EMPTY_CART"
+                                            })
+                                        }}>EmptyCart</Button>
                         </Group>
+                        
                     </Grid.Col>
                 </Grid>
             </Container>

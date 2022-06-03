@@ -14,7 +14,13 @@ export const cartReducer = (state, action) => {
             }
         case "CHANGE_CART_QTY":
             return {...state,
-                cart:state.cart.filter(c=>c.book.Sku === action.payload.Sku?c.qty=action.payload.qty:c.qty)}
+                cart:state.cart.filter(c=>c.book.Sku === action.payload.Sku?c.qty=action.payload.qty:c.qty)
+            }
+        case "EMPTY_CART":
+            return {
+                ...state,
+                cart:[]
+            }
         default:
             return state
     }
