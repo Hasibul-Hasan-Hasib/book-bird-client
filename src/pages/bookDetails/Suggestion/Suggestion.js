@@ -43,7 +43,7 @@ const Suggestion = (props) => {
                 <h2 className={styles.titleTop}>You may also like...</h2>
                 <Carousel responsive={responsive} className={styles.sliderContainer}>
                     {
-                        books?.map(item => <Card book={item}/>)
+                        books?.map(item => <Card key={item.Sku} book={item}/>)
                     }
                 </Carousel>
             </Container>

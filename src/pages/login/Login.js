@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm, useToggle, upperFirst } from '@mantine/hooks';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
     TextInput,
     PasswordInput,
@@ -59,14 +59,12 @@ export default function Login() {
 
     const { auth, signInUsingGooglePopup, signInUsingFacebookPopup, setError, setUser, createUserWithEmailAndPassword, signInWithEmailAndPassword } = Auth();
     const navigate = useNavigate();
-    const location = useLocation()
-    const redirect_url = location.state?.from || '/home'
 
     const handleGoogleSignIn = () => {
         signInUsingGooglePopup()
             .then(result => {
                 setUser(result.user)
-                navigate(redirect_url)
+                navigate(-1)
             })
             .catch(error => {
                 setError(error.message)
@@ -77,7 +75,7 @@ export default function Login() {
         signInUsingFacebookPopup()
             .then(result => {
                 setUser(result.user)
-                navigate(redirect_url)
+                navigate(-1)
             })
             .catch(error => {
                 setError(error.message)
@@ -88,7 +86,7 @@ export default function Login() {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 setUser(userCredential.user)
-                navigate(redirect_url)
+                navigate(-1)
             })
             .catch((error) => {
                 setError(error.message)
@@ -99,7 +97,7 @@ export default function Login() {
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 setUser(userCredential.user)
-                navigate(redirect_url)
+                navigate(-1)
             })
             .catch((error) => {
                 setUser(error.message)

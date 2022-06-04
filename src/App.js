@@ -21,10 +21,9 @@ function App() {
               <Route path="/home" element={<Home />}></Route>
               <Route path='/books/:id' element={<BookDetails />} />
               <Route path='/cart' element={<Cart />}></Route>
-              <Route path='/checkout'
-                element={<PrivateRoute>
-                  <Checkout />
-                </PrivateRoute>} />
+              <Route element={<PrivateRoute />}>
+                <Route path='/checkout' element={<Checkout />} />
+              </Route>
               <Route path='/login' element={<Login />}></Route>
               <Route path="/category/:categoryName" element={<Shop />}></Route>
               <Route path="*" element={<NotFound />}></Route>

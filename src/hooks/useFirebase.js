@@ -14,12 +14,18 @@ const useFirebase = () => {
     const signInUsingGooglePopup = () => {
         setIsLoading(true)
         const googleProvider = new GoogleAuthProvider();
+        if(googleProvider){
+            setIsLoading(false)
+        }
         return signInWithPopup(auth, googleProvider)
     }
 
     const signInUsingFacebookPopup = () => {
         setIsLoading(true)
         const facebookProvider = new FacebookAuthProvider();
+        if(facebookProvider){
+            setIsLoading(false)
+        }
         return signInWithPopup(auth, facebookProvider)
     }
 

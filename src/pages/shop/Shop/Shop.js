@@ -1,42 +1,54 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Shop.module.css'
 import { Button, Container, Grid, Group, Loader, NumberInput, Select, Text } from '@mantine/core'
 import Products from '../Products/Products';
 import TopSearch from '../../shared/TopSearch/TopSearch';
 import Footer from '../../shared/Footer/Footer';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import useProductData from '../../../hooks/useProductData';
 
 
 const Shop = () => {
 
     const { books, isLoading } = useProductData();
-
-
     const { categoryName } = useParams();
-
-    //tried to use query string
-
-    // const query = new URLSearchParams(search);
-    // const con = query.get('con');
-    // const binding = query.get('binding')
-
-
+    const navigate = useNavigate();
 
 
     const [category, setCategory] = useState(categoryName);
-    const [condition, setCondition] = useState('');
-    const [binding, setBinding] = useState('')
+    const [condition, setCondition] = useState('all');
+    const [binding, setBinding] = useState('all')
     const [low, setLow] = useState(10)
     const [high, setHigh] = useState(100)
+
+
+    useEffect(() => {
+        setCategory(categoryName)
+    }, [categoryName])
+
+
+    useEffect(()=>{
+        navigate(`/category/${category}`);
+    },[category])
+
+
+
+    //tried to use query string
+    // const query = new URLSearchParams(search);
+    // const con = query.get('con');
+    // const binding = query.get('binding');
+
+
+
+
 
 
 
     const categoryFilter = books.filter(item => category !== "all" ? item.Category1 === category || item.Category2 === category : item)
 
     const filter = () => {
-        const conditionFilter = categoryFilter.filter(item => condition ? item.Condition === condition : item)
-        const bindingFilter = conditionFilter.filter(item => binding ? item.Binding_type === binding : item)
+        const conditionFilter = categoryFilter.filter(item => condition !== "all" ? item.Condition === condition : item)
+        const bindingFilter = conditionFilter.filter(item => binding !== "all" ? item.Binding_type === binding : item)
         const priceFilter = bindingFilter.filter(item => high && low ? low <= parseFloat(item.Price.slice(1, 10)) && parseFloat(item.Price.slice(1, 10)) <= high : item)
         return priceFilter;
     }
@@ -119,6 +131,7 @@ const Shop = () => {
                             value={condition}
                             onChange={setCondition}
                             data={[
+                                { value: 'all', label: 'All' },
                                 { value: 'Good', label: 'Good' },
                                 { value: 'Very Good', label: 'Very Good' },
                                 { value: 'Well Read', label: 'Well Read' }
@@ -131,6 +144,7 @@ const Shop = () => {
                             onChange={setBinding}
                             value={binding}
                             data={[
+                                { value: 'all', label: 'All' },
                                 { value: 'Paperback', label: 'Paper Back' },
                                 { value: 'Hardback', label: 'Hard Back' }
                             ]}

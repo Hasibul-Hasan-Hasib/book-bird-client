@@ -12,7 +12,7 @@ const SmallSearchBar = () => {
 
     return (
         <>
-            <Grid columns={12} container className={styles.searchBarContainer}>
+            <Grid columns={12} className={styles.searchBarContainer}>
                 <Grid.Col span={2} >
                     <Menu
                         control={
